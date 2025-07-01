@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-n8n RAG Service for Cloud Deployment
-Optimized for Railway, Render, or other cloud platforms
+n8n RAG Service for Railway Deployment
+Simplified version for reliable deployment
 """
 
 from flask import Flask, request, jsonify
 import json
 from pathlib import Path
 import re
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 import logging
 import os
 
@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
-class CloudN8nRAGService:
+class SimpleN8nRAGService:
     def __init__(self):
         # Get workflows from environment variable or use default
         self.workflows_dir = os.getenv('WORKFLOWS_DIR', 'workflows/json_files')
@@ -26,195 +26,238 @@ class CloudN8nRAGService:
         logger.info(f"Loaded {len(self.workflows)} workflows")
     
     def load_workflows(self) -> List[Dict[str, Any]]:
-        """Load workflows from local directory"""
+        """Load workflows from directory, handling complex JSON structures"""
         workflows = []
         workflows_path = Path(self.workflows_dir)
         
+        logger.info(f"Workflows directory: {workflows_path}")
+        
         if not workflows_path.exists():
             logger.warning(f"Workflows directory {workflows_path} does not exist")
-            return workflows
+            # Return some sample workflows for testing
+            return self.get_sample_workflows()
         
-        for file_path in workflows_path.glob("*.json"):
-            try:
-                with open(file_path, 'r', encoding='utf-8') as f:
-                    workflow = json.load(f)
-                    workflow['_filename'] = file_path.name
-                    workflows.append(workflow)
-            except Exception as e:
-                logger.error(f"Error loading {file_path}: {e}")
+        try:
+            for file_path in workflows_path.glob("*.json"):
+                try:
+                    with open(file_path, 'r', encoding='utf-8') as f:
+                        data = json.load(f)
+                        
+                        # Handle different JSON structures
+                        if isinstance(data, dict):
+                            # Single workflow object
+                            workflow = data
+                            workflow['_filename'] = file_path.name
+                            workflows.append(workflow)
+                        elif isinstance(data, list):
+                            # Complex list structure - try to extract workflow data
+                            workflow_data = self.extract_workflow_from_complex_structure(data, file_path.name)
+                            if workflow_data:
+                                workflows.append(workflow_data)
+                        else:
+                            logger.warning(f"Skipping {file_path}: unexpected JSON structure (type={type(data)})")
+                            
+                except Exception as e:
+                    logger.error(f"Error loading {file_path}: {e}")
+        except Exception as e:
+            logger.error(f"Error accessing workflows directory: {e}")
+            return self.get_sample_workflows()
         
-        return workflows
+        logger.info(f"Loaded {len(workflows)} workflows from {workflows_path}")
+        
+        # Validate all workflows are proper dicts
+        valid_workflows = []
+        for i, workflow in enumerate(workflows):
+            if not isinstance(workflow, dict):
+                logger.warning(f"Skipping workflow {i}: not a dict (type={type(workflow)})")
+                continue
+            valid_workflows.append(workflow)
+        
+        logger.info(f"Valid workflows: {len(valid_workflows)} out of {len(workflows)}")
+        return valid_workflows
     
-    def extract_workflow_text(self, workflow: Dict[str, Any]) -> str:
-        """Extract searchable text from a workflow"""
-        text_parts = []
-        
-        # Workflow metadata
-        name = workflow.get('name', 'Unnamed Workflow')
-        description = workflow.get('description', '')
-        tags = workflow.get('tags', [])
-        
-        text_parts.append(f"Workflow: {name}")
-        if description:
-            text_parts.append(f"Description: {description}")
-        if tags:
-            text_parts.append(f"Tags: {', '.join(tags)}")
-        
-        # Node information
-        nodes = workflow.get('nodes', [])
-        for node in nodes:
-            node_name = node.get('name', 'Unnamed')
-            node_type = node.get('type', 'unknown')
-            text_parts.append(f"Node: {node_name} ({node_type})")
+    def extract_workflow_from_complex_structure(self, data: List, filename: str) -> Optional[Dict[str, Any]]:
+        """Extract workflow data from complex serialized structures"""
+        try:
+            # Look for workflow-like objects in the data
+            workflow_candidates = []
             
-            # Extract key parameters
-            params = node.get('parameters', {})
-            if params:
-                for key, value in params.items():
-                    if isinstance(value, (str, int, float, bool)):
-                        text_parts.append(f"  {key}: {value}")
-        
-        return " ".join(text_parts)
+            def find_workflow_objects(obj, path=""):
+                if isinstance(obj, dict):
+                    # Check if this looks like a workflow object - must have at least name or title
+                    if ('name' in obj or 'title' in obj) and isinstance(obj, dict):
+                        # Ensure it's a proper workflow object with expected structure
+                        if 'name' in obj or 'title' in obj or 'nodes' in obj or 'connections' in obj:
+                            workflow_candidates.append((obj, path))
+                    # Recursively search nested objects
+                    for key, value in obj.items():
+                        find_workflow_objects(value, f"{path}.{key}" if path else key)
+                elif isinstance(obj, list):
+                    # Recursively search list items
+                    for i, item in enumerate(obj):
+                        find_workflow_objects(item, f"{path}[{i}]" if path else f"[{i}]")
+            
+            find_workflow_objects(data)
+            
+            if workflow_candidates:
+                # Use the first workflow-like object found
+                workflow, path = workflow_candidates[0]
+                
+                # Ensure the workflow has the required fields
+                if not isinstance(workflow, dict):
+                    logger.warning(f"Extracted object from {filename} is not a dict: {type(workflow)}")
+                    return None
+                
+                # Add required fields if missing
+                if 'name' not in workflow and 'title' in workflow:
+                    workflow['name'] = workflow['title']
+                elif 'name' not in workflow and 'title' not in workflow:
+                    workflow['name'] = f"Workflow from {filename}"
+                
+                if 'nodes' not in workflow:
+                    workflow['nodes'] = []
+                
+                if 'connections' not in workflow:
+                    workflow['connections'] = {}
+                
+                workflow['_filename'] = filename
+                workflow['_extracted_from'] = path
+                logger.info(f"Extracted workflow from {filename} at path: {path}")
+                return workflow
+            else:
+                logger.warning(f"No workflow data found in {filename}")
+                return None
+                
+        except Exception as e:
+            logger.error(f"Error extracting workflow from {filename}: {e}")
+            return None
+    
+    def get_sample_workflows(self) -> List[Dict[str, Any]]:
+        """Return sample workflows for testing when no files are found"""
+        return [
+            {
+                "name": "Sample Slack Notification Workflow",
+                "description": "Sends Slack notifications when new emails arrive",
+                "nodes": [
+                    {"name": "Gmail Trigger", "type": "n8n-nodes-base.gmailTrigger"},
+                    {"name": "Slack", "type": "n8n-nodes-base.slack"}
+                ],
+                "connections": {
+                    "Gmail Trigger": [{"main": [{"node": "Slack"}]}]
+                },
+                "_filename": "sample_slack_workflow.json"
+            },
+            {
+                "name": "Sample Data Sync Workflow", 
+                "description": "Syncs data between Google Sheets and Airtable",
+                "nodes": [
+                    {"name": "Google Sheets", "type": "n8n-nodes-base.googleSheets"},
+                    {"name": "Airtable", "type": "n8n-nodes-base.airtable"}
+                ],
+                "connections": {
+                    "Google Sheets": [{"main": [{"node": "Airtable"}]}]
+                },
+                "_filename": "sample_sync_workflow.json"
+            }
+        ]
     
     def search_workflows(self, query: str, n_results: int = 3) -> List[Dict[str, Any]]:
-        """Search workflows using keyword matching"""
+        """Simple keyword search"""
         results = []
         query_lower = query.lower()
-        query_words = set(re.findall(r'\w+', query_lower))
         
         for workflow in self.workflows:
-            score = 0
-            workflow_text = self.extract_workflow_text(workflow).lower()
-            
-            # Exact phrase matches (highest priority)
-            if query_lower in workflow_text:
-                score += 20
-            
-            # Word matches
-            workflow_words = set(re.findall(r'\w+', workflow_text))
-            word_matches = len(query_words.intersection(workflow_words))
-            score += word_matches * 3
-            
-            # Node type matches
-            nodes = workflow.get('nodes', [])
-            for node in nodes:
-                node_type = node.get('type', '').lower()
-                if any(word in node_type for word in query_words):
-                    score += 5
+            try:
+                # Ensure workflow is a dict
+                if not isinstance(workflow, dict):
+                    logger.warning(f"Skipping non-dict workflow: {type(workflow)}")
+                    continue
                 
-                # Check node name
-                node_name = node.get('name', '').lower()
-                if any(word in node_name for word in query_words):
-                    score += 3
-            
-            # Workflow name/description matches
-            workflow_name = workflow.get('name', '').lower()
-            workflow_desc = workflow.get('description', '').lower()
-            
-            if any(word in workflow_name for word in query_words):
-                score += 8
-            if any(word in workflow_desc for word in query_words):
-                score += 6
-            
-            if score > 0:
-                results.append({
-                    'workflow': workflow,
-                    'score': score,
-                    'text': self.extract_workflow_text(workflow)
-                })
+                score = 0
+                workflow_text = f"{workflow.get('name', '')} {workflow.get('description', '')}".lower()
+                
+                # Simple scoring
+                if query_lower in workflow_text:
+                    score += 10
+                
+                # Check node types
+                nodes = workflow.get('nodes', [])
+                if isinstance(nodes, list):
+                    for node in nodes:
+                        if isinstance(node, dict):
+                            node_type = node.get('type', '').lower()
+                            if query_lower in node_type:
+                                score += 5
+                
+                if score > 0:
+                    results.append({
+                        'workflow': workflow,
+                        'score': score
+                    })
+            except Exception as e:
+                logger.error(f"Error processing workflow in search: {e}")
+                continue
         
-        # Sort by score and return top results
         results.sort(key=lambda x: x['score'], reverse=True)
         return results[:n_results]
     
     def format_examples(self, query: str) -> str:
-        """Format search results as examples for the LLM prompt"""
+        """Format search results as examples"""
         results = self.search_workflows(query)
         
         if not results:
-            return "No specific examples found for this query. Using general n8n workflow patterns."
+            return "No specific examples found. Using general n8n workflow patterns."
         
         examples_text = "## Relevant Workflow Examples:\n\n"
         
         for i, result in enumerate(results, 1):
             workflow = result['workflow']
             examples_text += f"### Example {i}: {workflow.get('name', 'Unnamed')}\n"
-            examples_text += f"**Relevance Score:** {result['score']}\n"
-            examples_text += f"**Source:** {workflow.get('_filename', 'unknown')}\n\n"
+            examples_text += f"**Relevance Score:** {result['score']}\n\n"
             
-            # Extract key nodes and their types
+            # Show nodes
             nodes = workflow.get('nodes', [])
-            examples_text += "**Key Nodes:**\n"
-            for j, node in enumerate(nodes[:6], 1):  # Show first 6 nodes
-                node_name = node.get('name', 'Unnamed')
-                node_type = node.get('type', 'unknown')
-                examples_text += f"{j}. {node_name} ({node_type})\n"
-            
-            # Show connection pattern
-            connections = workflow.get('connections', {})
-            if connections:
-                examples_text += "\n**Connection Pattern:**\n"
-                for from_node, to_nodes in list(connections.items())[:3]:  # Show first 3 connections
-                    for connection in to_nodes:
-                        for to_node in connection:
-                            examples_text += f"  {from_node} → {to_node['node']}\n"
+            if nodes:
+                examples_text += "**Nodes:**\n"
+                for j, node in enumerate(nodes[:5], 1):
+                    node_name = node.get('name', 'Unnamed')
+                    node_type = node.get('type', 'unknown')
+                    examples_text += f"{j}. {node_name} ({node_type})\n"
             
             examples_text += "\n"
         
         return examples_text
-    
-    def get_workflow_statistics(self) -> Dict[str, Any]:
-        """Get statistics about the workflow collection"""
-        if not self.workflows:
-            return {"total_workflows": 0}
-        
-        # Count node types
-        node_types = {}
-        trigger_types = {}
-        app_integrations = set()
-        
-        for workflow in self.workflows:
-            nodes = workflow.get('nodes', [])
-            for node in nodes:
-                node_type = node.get('type', 'unknown')
-                node_types[node_type] = node_types.get(node_type, 0) + 1
-                
-                # Extract app name from node type
-                if '.' in node_type:
-                    app_name = node_type.split('.')[0]
-                    app_integrations.add(app_name)
-                
-                # Identify triggers
-                if 'trigger' in node_type.lower():
-                    trigger_types[node_type] = trigger_types.get(node_type, 0) + 1
-        
-        return {
-            "total_workflows": len(self.workflows),
-            "unique_node_types": len(node_types),
-            "unique_apps": len(app_integrations),
-            "unique_triggers": len(trigger_types),
-            "top_node_types": sorted(node_types.items(), key=lambda x: x[1], reverse=True)[:10],
-            "top_triggers": sorted(trigger_types.items(), key=lambda x: x[1], reverse=True)[:5],
-            "apps": list(app_integrations)
-        }
 
 # Initialize the RAG service
-rag_service = CloudN8nRAGService()
+rag_service = SimpleN8nRAGService()
 
-@app.route('/health', methods=['GET'])
+@app.route('/')
+def root():
+    """Root endpoint"""
+    return jsonify({
+        'service': 'n8n RAG Service',
+        'version': '1.0.0',
+        'status': 'running',
+        'workflows_loaded': len(rag_service.workflows),
+        'endpoints': {
+            'health': '/health',
+            'enhance_prompt': '/enhance-prompt',
+            'search': '/search'
+        }
+    })
+
+@app.route('/health')
 def health_check():
-    """Health check endpoint for cloud platforms"""
-    stats = rag_service.get_workflow_statistics()
+    """Health check endpoint"""
     return jsonify({
         'status': 'healthy',
-        'workflows_loaded': stats['total_workflows'],
-        'message': f"RAG service loaded {stats['total_workflows']} workflows",
-        'environment': os.getenv('RAILWAY_ENVIRONMENT', 'development')
+        'workflows_loaded': len(rag_service.workflows),
+        'message': f"RAG service loaded {len(rag_service.workflows)} workflows"
     })
 
 @app.route('/enhance-prompt', methods=['POST'])
 def enhance_prompt():
-    """Main endpoint for enhancing prompts with workflow examples"""
+    """Main endpoint for enhancing prompts"""
     try:
         data = request.json
         if not data or 'query' not in data:
@@ -226,18 +269,12 @@ def enhance_prompt():
         # Get relevant examples
         examples = rag_service.format_examples(user_query)
         
-        # Get workflow statistics
-        stats = rag_service.get_workflow_statistics()
-        
         # Enhanced system prompt
         enhanced_prompt = f"""# Overview
 You are an expert AI automation developer specializing in building workflows for n8n. Your job is to translate a human's natural language request into a fully functional n8n workflow JSON.
 
 ## Available Knowledge Base
-You have access to a comprehensive database of {stats['total_workflows']} real n8n workflows, including official n8n team workflows and community examples. The knowledge base includes:
-- {stats['unique_apps']} different app integrations
-- {stats['unique_node_types']} different node types
-- {stats['unique_triggers']} different trigger types
+You have access to a comprehensive database of {len(rag_service.workflows)} real n8n workflows, including official n8n team workflows and community examples.
 
 {examples}
 
@@ -246,7 +283,6 @@ You have access to a comprehensive database of {stats['total_workflows']} real n
 2. Identify relevant patterns and node combinations from the examples
 3. Generate a workflow that follows similar patterns but is customized for the user's specific needs
 4. Ensure the workflow is complete, functional, and follows n8n best practices
-5. Use the node types and connection patterns shown in the examples as a reference
 
 ## Output Requirements
 Your output should only be the final JSON of the full workflow, starting with {{ and ending with }}.
@@ -257,7 +293,7 @@ User Request: {user_query}
         return jsonify({
             'enhanced_prompt': enhanced_prompt,
             'examples_found': len(rag_service.search_workflows(user_query)) > 0,
-            'workflows_searched': stats['total_workflows'],
+            'workflows_searched': len(rag_service.workflows),
             'query': user_query
         })
         
@@ -267,7 +303,7 @@ User Request: {user_query}
 
 @app.route('/search', methods=['POST'])
 def search_workflows():
-    """Direct search endpoint for testing"""
+    """Search endpoint"""
     try:
         data = request.json
         query = data.get('query', '')
@@ -281,8 +317,7 @@ def search_workflows():
                 {
                     'name': r['workflow'].get('name', 'Unnamed'),
                     'score': r['score'],
-                    'filename': r['workflow'].get('_filename', 'unknown'),
-                    'text': r['text'][:500] + "..." if len(r['text']) > 500 else r['text']
+                    'filename': r['workflow'].get('_filename', 'unknown')
                 }
                 for r in results
             ]
@@ -292,38 +327,8 @@ def search_workflows():
         logger.error(f"Error in search: {e}")
         return jsonify({'error': str(e)}), 500
 
-@app.route('/stats', methods=['GET'])
-def get_statistics():
-    """Get workflow collection statistics"""
-    stats = rag_service.get_workflow_statistics()
-    return jsonify(stats)
-
-@app.route('/', methods=['GET'])
-def root():
-    """Root endpoint with service information"""
-    return jsonify({
-        'service': 'n8n RAG Service',
-        'version': '1.0.0',
-        'endpoints': {
-            'health': '/health',
-            'enhance_prompt': '/enhance-prompt',
-            'search': '/search',
-            'stats': '/stats'
-        },
-        'documentation': 'See n8n_agent_integration_guide.md for usage instructions'
-    })
-
 if __name__ == '__main__':
-    # Get port from environment (for cloud platforms)
     port = int(os.getenv('PORT', 5000))
-    
-    logger.info("Starting n8n RAG Service (Cloud Version)...")
-    logger.info(f"Port: {port}")
+    logger.info(f"Starting n8n RAG Service on port {port}")
     logger.info(f"Workflows loaded: {len(rag_service.workflows)}")
-    
-    # Print initial statistics
-    stats = rag_service.get_workflow_statistics()
-    logger.info(f"Total workflows: {stats['total_workflows']}")
-    logger.info(f"Available apps: {', '.join(stats['apps'][:10])}...")
-    
     app.run(host='0.0.0.0', port=port, debug=False) 
