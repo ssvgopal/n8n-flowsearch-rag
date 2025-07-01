@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 
 class N8nRAGService:
-    def __init__(self, workflows_dir="all_flowsearch_workflows/json_files"):
+    def __init__(self, workflows_dir="workflows/json_files"):
         self.workflows_dir = Path(workflows_dir)
         self.workflows = self.load_workflows()
         logger.info(f"Loaded {len(self.workflows)} workflows from {self.workflows_dir}")

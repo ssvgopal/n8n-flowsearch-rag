@@ -21,7 +21,7 @@ app = Flask(__name__)
 class CloudN8nRAGService:
     def __init__(self):
         # Get workflows from environment variable or use default
-        self.workflows_dir = os.getenv('WORKFLOWS_DIR', 'all_flowsearch_workflows/json_files')
+        self.workflows_dir = os.getenv('WORKFLOWS_DIR', 'workflows/json_files')
         self.workflows = self.load_workflows()
         logger.info(f"Loaded {len(self.workflows)} workflows")
     
