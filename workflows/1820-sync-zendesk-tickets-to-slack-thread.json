@@ -1,0 +1,4 @@
+{
+  "id": "{{ticket.id}}",
+  "comment": "{{ticket.latest_comment_html}}"
+}

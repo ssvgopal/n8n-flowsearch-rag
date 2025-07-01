@@ -1,0 +1,2805 @@
+[
+  [
+    "ShallowReactive",
+    1
+  ],
+  {
+    "data": 2,
+    "state": 926,
+    "once": 935,
+    "_errors": 936,
+    "serverRendered": 140,
+    "path": 160,
+    "pinia": 938
+  },
+  [
+    "ShallowReactive",
+    3
+  ],
+  {
+    "mainMenu": 4,
+    "i-ph:caret-down": 121,
+    "get-workflow-1941-send-google-sheets-data-as-a-message-to-a-discord-channel": 126,
+    "i-ph:arrow-left": 162,
+    "footer": 164,
+    "githubCount": 717,
+    "i-uil:github": 718,
+    "sub-footer": 720
+  },
+  {
+    "id": 5,
+    "attributes": 6
+  },
+  1,
+  {
+    "createdAt": 7,
+    "updatedAt": 8,
+    "menuItems": 9
+  },
+  "2025-04-10T08:00:50.904Z",
+  "2025-05-26T12:18:54.625Z",
+  [
+    10,
+    30,
+    62,
+    82,
+    113,
+    117
+  ],
+  {
+    "id": 5,
+    "url": 11,
+    "label": 12,
+    "subMenuLabel": 13,
+    "subMenu": 14
+  },
+  "/features",
+  "Product",
+  "Discover n8n",
+  [
+    15,
+    19,
+    22,
+    26
+  ],
+  {
+    "id": 16,
+    "url": 11,
+    "label": 17,
+    "shortDescription": 18,
+    "description": 18,
+    "icon": 18
+  },
+  2,
+  "Product overview",
+  null,
+  {
+    "id": 5,
+    "url": 20,
+    "label": 21,
+    "shortDescription": 18,
+    "description": 18,
+    "icon": 18
+  },
+  "/integrations",
+  "Integrations",
+  {
+    "id": 23,
+    "url": 24,
+    "label": 25,
+    "shortDescription": 18,
+    "description": 18,
+    "icon": 18
+  },
+  3,
+  "/workflows",
+  "Templates",
+  {
+    "id": 27,
+    "url": 28,
+    "label": 29,
+    "shortDescription": 18,
+    "description": 18,
+    "icon": 18
+  },
+  4,
+  "/ai",
+  "AI",
+  {
+    "id": 16,
+    "url": 18,
+    "label": 31,
+    "subMenuLabel": 32,
+    "subMenu": 33
+  },
+  "Use cases",
+  "Explore case study",
+  [
+    34,
+    38,
+    42,
+    46,
+    50,
+    54,
+    58
+  ],
+  {
+    "id": 35,
+    "url": 36,
+    "label": 37,
+    "shortDescription": 18,
+    "description": 18,
+    "icon": 18
+  },
+  5,
+  "/itops",
+  "IT operations",
+  {
+    "id": 39,
+    "url": 40,
+    "label": 41,
+    "shortDescription": 18,
+    "description": 18,
+    "icon": 18
+  },
+  6,
+  "/secops",
+  "Security operations",
+  {
+    "id": 43,
+    "url": 44,
+    "label": 45,
+    "shortDescription": 18,
+    "description": 18,
+    "icon": 18
+  },
+  7,
+  "/embed",
+  "Embedded automation",
+  {
+    "id": 47,
+    "url": 48,
+    "label": 49,
+    "shortDescription": 18,
+    "description": 18,
+    "icon": 18
+  },
+  18,
+  "/automate-lead-management",
+  "Lead automation",
+  {
+    "id": 51,
+    "url": 52,
+    "label": 53,
+    "shortDescription": 18,
+    "description": 18,
+    "icon": 18
+  },
+  21,
+  "/supercharge-your-crm",
+  "Supercharge your CRM",
+  {
+    "id": 55,
+    "url": 56,
+    "label": 57,
+    "shortDescription": 18,
+    "description": 18,
+    "icon": 18
+  },
+  19,
+  "/limitless-integrations",
+  "Limitless integrations",
+  {
+    "id": 59,
+    "url": 60,
+    "label": 61,
+    "shortDescription": 18,
+    "description": 18,
+    "icon": 18
+  },
+  20,
+  "/saas",
+  "Backend prototyping",
+  {
+    "id": 27,
+    "url": 63,
+    "label": 64,
+    "subMenuLabel": 18,
+    "subMenu": 65
+  },
+  "https://docs.n8n.io/",
+  "Docs",
+  [
+    66,
+    70,
+    74,
+    78
+  ],
+  {
+    "id": 67,
+    "url": 68,
+    "label": 69,
+    "shortDescription": 18,
+    "description": 18,
+    "icon": 18
+  },
+  8,
+  "https://docs.n8n.io/hosting",
+  "Self-host n8n",
+  {
+    "id": 71,
+    "url": 72,
+    "label": 73,
+    "shortDescription": 18,
+    "description": 18,
+    "icon": 18
+  },
+  9,
+  "https://docs.n8n.io",
+  "Documentation",
+  {
+    "id": 75,
+    "url": 76,
+    "label": 77,
+    "shortDescription": 18,
+    "description": 18,
+    "icon": 18
+  },
+  10,
+  "https://docs.n8n.io/choose-n8n/faircode-license",
+  "Our license",
+  {
+    "id": 79,
+    "url": 80,
+    "label": 81,
+    "shortDescription": 18,
+    "description": 18,
+    "icon": 18
+  },
+  22,
+  "https://docs.n8n.io/release-notes/",
+  "Release notes",
+  {
+    "id": 23,
+    "url": 18,
+    "label": 83,
+    "subMenuLabel": 18,
+    "subMenu": 84
+  },
+  "Community",
+  [
+    85,
+    89,
+    93,
+    97,
+    101,
+    105,
+    109
+  ],
+  {
+    "id": 86,
+    "url": 87,
+    "label": 88,
+    "shortDescription": 18,
+    "description": 18,
+    "icon": 18
+  },
+  11,
+  "https://community.n8n.io/",
+  "Forum",
+  {
+    "id": 90,
+    "url": 91,
+    "label": 92,
+    "shortDescription": 18,
+    "description": 18,
+    "icon": 18
+  },
+  12,
+  "https://discord.gg/XPKeKXeB7d",
+  "Discord",
+  {
+    "id": 94,
+    "url": 95,
+    "label": 96,
+    "shortDescription": 18,
+    "description": 18,
+    "icon": 18
+  },
+  13,
+  "https://blog.n8n.io/",
+  "Blog",
+  {
+    "id": 98,
+    "url": 99,
+    "label": 100,
+    "shortDescription": 18,
+    "description": 18,
+    "icon": 18
+  },
+  14,
+  "/creators",
+  "Creators",
+  {
+    "id": 102,
+    "url": 103,
+    "label": 104,
+    "shortDescription": 18,
+    "description": 18,
+    "icon": 18
+  },
+  16,
+  "https://docs.n8n.io/help-community/contributing/",
+  "Contribute",
+  {
+    "id": 106,
+    "url": 107,
+    "label": 108,
+    "shortDescription": 18,
+    "description": 18,
+    "icon": 18
+  },
+  15,
+  "/expert-partners",
+  "Expert partners",
+  {
+    "id": 110,
+    "url": 111,
+    "label": 112,
+    "shortDescription": 18,
+    "description": 18,
+    "icon": 18
+  },
+  17,
+  "/support",
+  "Support",
+  {
+    "id": 35,
+    "url": 114,
+    "label": 115,
+    "subMenuLabel": 18,
+    "subMenu": 116
+  },
+  "/enterprise",
+  "Enterprise",
+  [],
+  {
+    "id": 39,
+    "url": 118,
+    "label": 119,
+    "subMenuLabel": 18,
+    "subMenu": 120
+  },
+  "/pricing",
+  "Pricing",
+  [],
+  {
+    "left": 122,
+    "top": 122,
+    "width": 123,
+    "height": 123,
+    "rotate": 122,
+    "vFlip": 124,
+    "hFlip": 124,
+    "body": 125
+  },
+  0,
+  256,
+  false,
+  "<path fill=\"currentColor\" d=\"m213.66 101.66l-80 80a8 8 0 0 1-11.32 0l-80-80a8 8 0 0 1 11.32-11.32L128 164.69l74.34-74.35a8 8 0 0 1 11.32 11.32\"/>",
+  {
+    "id": 127,
+    "name": 128,
+    "recentViews": 122,
+    "views": 129,
+    "description": 130,
+    "price": 18,
+    "purchaseUrl": 18,
+    "updatedAt": 131,
+    "createdAt": 132,
+    "categories": 133,
+    "user": 137,
+    "nodes": 143,
+    "image": 152,
+    "usedCredentials": 153,
+    "slug": 159,
+    "url": 160,
+    "nonNativeNodes": 161
+  },
+  1941,
+  "Send Google Sheets data as a message to a Discord channel",
+  2771,
+  "This workflow sends a message to a Discord channel when a new row is added or a row is updated in a Google Sheet. The message will send all data rows in the Google Sheet.\n\n## Prerequisites\n- Discord account and [Discord credentials](https://docs.n8n.io/integrations/builtin/credentials/discord/).\n- Google account and [Google credentials](https://docs.n8n.io/integrations/builtin/credentials/google/).\n\n## How it works\nUsing a code node, we can use the obtained Google Sheet data to create a custom message that will be sent to Discord. The message will be sent to the Discord channel specified in the Discord node.\n\n### Setup\nThis workflow requires that you set up a Discord webhook and have an existing Google Sheet with data. See [how to set up a Discord webhook here](https://docs.n8n.io/integrations/builtin/credentials/discord/#creating-a-webhook-in-discord).",
+  "2024-07-15T18:14:43.253Z",
+  "2023-08-03T09:13:58.015Z",
+  [
+    134
+  ],
+  {
+    "id": 135,
+    "name": 136
+  },
+  43,
+  "Personal Productivity",
+  {
+    "username": 138,
+    "name": 139,
+    "verified": 140,
+    "avatar": 141,
+    "url": 142
+  },
+  "n8n-team",
+  "n8n Team",
+  true,
+  "https://gravatar.com/avatar/b3d1a47322f05a8be3d2e7bad6a80c29161bd58b91e4762cbb3ac25e5d0db5a8?r=pg&d=retro&size=200",
+  "/creators/n8n-team/",
+  [
+    144,
+    146,
+    149
+  ],
+  {
+    "id": 47,
+    "url": 145
+  },
+  "/integrations/google-sheets/",
+  {
+    "id": 147,
+    "url": 148
+  },
+  60,
+  "/integrations/discord/",
+  {
+    "id": 150,
+    "url": 151
+  },
+  834,
+  "/integrations/code/",
+  [],
+  {
+    "googleSheetsTriggerOAuth2Api": 154
+  },
+  {
+    "id": 155,
+    "name": 156,
+    "parentNodeTypes": 157
+  },
+  "35",
+  "TEST USER",
+  [
+    158
+  ],
+  "n8n-nodes-base.googleSheetsTrigger",
+  "1941-send-google-sheets-data-as-a-message-to-a-discord-channel",
+  "/workflows/1941-send-google-sheets-data-as-a-message-to-a-discord-channel/",
+  [],
+  {
+    "left": 122,
+    "top": 122,
+    "width": 123,
+    "height": 123,
+    "rotate": 122,
+    "vFlip": 124,
+    "hFlip": 124,
+    "body": 163
+  },
+  "<path fill=\"currentColor\" d=\"M224 128a8 8 0 0 1-8 8H59.31l58.35 58.34a8 8 0 0 1-11.32 11.32l-72-72a8 8 0 0 1 0-11.32l72-72a8 8 0 0 1 11.32 11.32L59.31 120H216a8 8 0 0 1 8 8\"/>",
+  {
+    "id": 5,
+    "attributes": 165
+  },
+  {
+    "content": 166,
+    "copyright": 167,
+    "bottomContent": 168,
+    "createdAt": 169,
+    "updatedAt": 170,
+    "socialLinks": 171,
+    "navigation": 337,
+    "ctaBox": 379,
+    "feedbackSlider": 386
+  },
+  "Automate without limits",
+  "\u00a9 2025 n8n &nbsp; | &nbsp; All rights reserved.",
+  "[Impressum](/impressum/) | [Legal](/legal/) | [Privacy](/legal/#privacy) | [Report a vulnerability](/legal/#vulnerability)",
+  "2025-04-10T07:56:11.504Z",
+  "2025-05-27T10:45:59.708Z",
+  [
+    172,
+    209,
+    237,
+    271,
+    304
+  ],
+  {
+    "id": 5,
+    "url": 173,
+    "label": 174,
+    "icon": 175,
+    "image": 200
+  },
+  "https://twitter.com/n8n_io",
+  "Twitter",
+  {
+    "data": 176
+  },
+  {
+    "id": 177,
+    "attributes": 178
+  },
+  543,
+  {
+    "Identificator": 179,
+    "createdAt": 180,
+    "updatedAt": 181,
+    "publishedAt": 182,
+    "img": 183
+  },
+  "twitter",
+  "2025-04-10T09:58:33.454Z",
+  "2025-04-10T09:58:34.465Z",
+  "2025-04-10T09:58:34.461Z",
+  {
+    "id": 184,
+    "alt": 18,
+    "caption": 18,
+    "url": 18,
+    "img": 185,
+    "video": 198,
+    "imgRetina": 199
+  },
+  5938,
+  {
+    "data": 186
+  },
+  {
+    "id": 187,
+    "attributes": 188
+  },
+  2571,
+  {
+    "name": 189,
+    "alternativeText": 18,
+    "caption": 18,
+    "width": 190,
+    "height": 51,
+    "formats": 18,
+    "hash": 191,
+    "ext": 192,
+    "mime": 193,
+    "size": 194,
+    "url": 195,
+    "previewUrl": 18,
+    "provider": 196,
+    "provider_metadata": 18,
+    "createdAt": 197,
+    "updatedAt": 197
+  },
+  "twitter_f8db5c2135.svg",
+  24,
+  "twitter_f8db5c2135_c70162668b",
+  ".svg",
+  "image/svg+xml",
+  0.64,
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/twitter_f8db5c2135_c70162668b.svg",
+  "strapi-provider-upload-azure-storage",
+  "2025-04-10T09:58:17.210Z",
+  {
+    "data": 18
+  },
+  {
+    "data": 18
+  },
+  {
+    "data": 201
+  },
+  {
+    "id": 202,
+    "attributes": 203
+  },
+  2652,
+  {
+    "name": 204,
+    "alternativeText": 18,
+    "caption": 18,
+    "width": 102,
+    "height": 102,
+    "formats": 18,
+    "hash": 205,
+    "ext": 192,
+    "mime": 193,
+    "size": 206,
+    "url": 207,
+    "previewUrl": 18,
+    "provider": 196,
+    "provider_metadata": 18,
+    "createdAt": 208,
+    "updatedAt": 208
+  },
+  "twitter-x.svg",
+  "twitter_x_62a44e965e",
+  0.29,
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/twitter_x_62a44e965e.svg",
+  "2025-05-05T09:38:31.077Z",
+  {
+    "id": 16,
+    "url": 210,
+    "label": 211,
+    "icon": 212,
+    "image": 234
+  },
+  "https://github.com/n8n-io/n8n",
+  "GitHub",
+  {
+    "data": 213
+  },
+  {
+    "id": 214,
+    "attributes": 215
+  },
+  544,
+  {
+    "Identificator": 216,
+    "createdAt": 217,
+    "updatedAt": 218,
+    "publishedAt": 219,
+    "img": 220
+  },
+  "github",
+  "2025-04-10T09:59:43.738Z",
+  "2025-04-10T09:59:44.487Z",
+  "2025-04-10T09:59:44.484Z",
+  {
+    "id": 221,
+    "alt": 18,
+    "caption": 18,
+    "url": 18,
+    "img": 222,
+    "video": 232,
+    "imgRetina": 233
+  },
+  5939,
+  {
+    "data": 223
+  },
+  {
+    "id": 224,
+    "attributes": 225
+  },
+  2572,
+  {
+    "name": 226,
+    "alternativeText": 18,
+    "caption": 18,
+    "width": 227,
+    "height": 227,
+    "formats": 18,
+    "hash": 228,
+    "ext": 192,
+    "mime": 193,
+    "size": 229,
+    "url": 230,
+    "previewUrl": 18,
+    "provider": 196,
+    "provider_metadata": 18,
+    "createdAt": 231,
+    "updatedAt": 231
+  },
+  "github_e1f217d7a3.svg",
+  25,
+  "github_e1f217d7a3_b9a271324f",
+  0.84,
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/github_e1f217d7a3_b9a271324f.svg",
+  "2025-04-10T09:59:35.205Z",
+  {
+    "data": 18
+  },
+  {
+    "data": 18
+  },
+  {
+    "data": 235
+  },
+  {
+    "id": 224,
+    "attributes": 236
+  },
+  {
+    "name": 226,
+    "alternativeText": 18,
+    "caption": 18,
+    "width": 227,
+    "height": 227,
+    "formats": 18,
+    "hash": 228,
+    "ext": 192,
+    "mime": 193,
+    "size": 229,
+    "url": 230,
+    "previewUrl": 18,
+    "provider": 196,
+    "provider_metadata": 18,
+    "createdAt": 231,
+    "updatedAt": 231
+  },
+  {
+    "id": 23,
+    "url": 238,
+    "label": 92,
+    "icon": 239,
+    "image": 262
+  },
+  "https://discord.gg/n8n",
+  {
+    "data": 240
+  },
+  {
+    "id": 241,
+    "attributes": 242
+  },
+  545,
+  {
+    "Identificator": 243,
+    "createdAt": 244,
+    "updatedAt": 245,
+    "publishedAt": 246,
+    "img": 247
+  },
+  "cs-dedatech-logo-detail",
+  "2025-04-04T13:57:52.981Z",
+  "2025-04-24T10:44:44.997Z",
+  "2025-04-04T13:57:56.239Z",
+  {
+    "id": 248,
+    "alt": 18,
+    "caption": 18,
+    "url": 18,
+    "img": 249,
+    "video": 260,
+    "imgRetina": 261
+  },
+  7074,
+  {
+    "data": 250
+  },
+  {
+    "id": 251,
+    "attributes": 252
+  },
+  2610,
+  {
+    "name": 253,
+    "alternativeText": 254,
+    "caption": 254,
+    "width": 255,
+    "height": 147,
+    "formats": 18,
+    "hash": 256,
+    "ext": 192,
+    "mime": 193,
+    "size": 257,
+    "url": 258,
+    "previewUrl": 18,
+    "provider": 196,
+    "provider_metadata": 18,
+    "createdAt": 259,
+    "updatedAt": 259
+  },
+  "cs-deda-tech-logo.svg",
+  "",
+  209,
+  "cs_deda_tech_logo_16c4b83cc6",
+  41.6,
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/cs_deda_tech_logo_16c4b83cc6.svg",
+  "2025-04-24T10:42:33.009Z",
+  {
+    "data": 18
+  },
+  {
+    "data": 18
+  },
+  {
+    "data": 263
+  },
+  {
+    "id": 264,
+    "attributes": 265
+  },
+  2573,
+  {
+    "name": 266,
+    "alternativeText": 18,
+    "caption": 18,
+    "width": 190,
+    "height": 55,
+    "formats": 18,
+    "hash": 267,
+    "ext": 192,
+    "mime": 193,
+    "size": 268,
+    "url": 269,
+    "previewUrl": 18,
+    "provider": 196,
+    "provider_metadata": 18,
+    "createdAt": 270,
+    "updatedAt": 270
+  },
+  "discord_253947c90b.svg",
+  "discord_253947c90b_191e8f60fa",
+  1.24,
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/discord_253947c90b_191e8f60fa.svg",
+  "2025-04-10T10:00:34.485Z",
+  {
+    "id": 27,
+    "url": 272,
+    "label": 273,
+    "icon": 274,
+    "image": 295
+  },
+  "https://www.linkedin.com/company/n8n/",
+  "Linkedin",
+  {
+    "data": 275
+  },
+  {
+    "id": 276,
+    "attributes": 277
+  },
+  546,
+  {
+    "Identificator": 278,
+    "createdAt": 279,
+    "updatedAt": 280,
+    "publishedAt": 281,
+    "img": 282
+  },
+  "cs-stepstone-logo-detail",
+  "2025-04-04T14:06:00.098Z",
+  "2025-04-24T11:55:26.791Z",
+  "2025-04-04T14:06:03.683Z",
+  {
+    "id": 283,
+    "alt": 18,
+    "caption": 18,
+    "url": 18,
+    "img": 284,
+    "video": 293,
+    "imgRetina": 294
+  },
+  7110,
+  {
+    "data": 285
+  },
+  {
+    "id": 286,
+    "attributes": 287
+  },
+  2615,
+  {
+    "name": 288,
+    "alternativeText": 254,
+    "caption": 254,
+    "width": 255,
+    "height": 147,
+    "formats": 18,
+    "hash": 289,
+    "ext": 192,
+    "mime": 193,
+    "size": 290,
+    "url": 291,
+    "previewUrl": 18,
+    "provider": 196,
+    "provider_metadata": 18,
+    "createdAt": 292,
+    "updatedAt": 292
+  },
+  "cs-stepstone-logo.svg",
+  "cs_stepstone_logo_86a9118201",
+  37.54,
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/cs_stepstone_logo_86a9118201.svg",
+  "2025-04-24T11:53:24.317Z",
+  {
+    "data": 18
+  },
+  {
+    "data": 18
+  },
+  {
+    "data": 296
+  },
+  {
+    "id": 297,
+    "attributes": 298
+  },
+  2574,
+  {
+    "name": 299,
+    "alternativeText": 18,
+    "caption": 18,
+    "width": 227,
+    "height": 227,
+    "formats": 18,
+    "hash": 300,
+    "ext": 192,
+    "mime": 193,
+    "size": 301,
+    "url": 302,
+    "previewUrl": 18,
+    "provider": 196,
+    "provider_metadata": 18,
+    "createdAt": 303,
+    "updatedAt": 303
+  },
+  "linkedin_d710e84d63.svg",
+  "linkedin_d710e84d63_6ed0dc28aa",
+  0.58,
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/linkedin_d710e84d63_6ed0dc28aa.svg",
+  "2025-04-10T10:02:11.075Z",
+  {
+    "id": 35,
+    "url": 305,
+    "label": 306,
+    "icon": 307,
+    "image": 328
+  },
+  "https://www.youtube.com/c/n8n-io",
+  "youtube",
+  {
+    "data": 308
+  },
+  {
+    "id": 309,
+    "attributes": 310
+  },
+  547,
+  {
+    "Identificator": 311,
+    "createdAt": 312,
+    "updatedAt": 313,
+    "publishedAt": 314,
+    "img": 315
+  },
+  "cs-sanctifai-logo-detail",
+  "2025-04-04T14:16:18.931Z",
+  "2025-05-27T11:12:57.338Z",
+  "2025-04-04T14:16:23.867Z",
+  {
+    "id": 316,
+    "alt": 18,
+    "caption": 18,
+    "url": 18,
+    "img": 317,
+    "video": 326,
+    "imgRetina": 327
+  },
+  8144,
+  {
+    "data": 318
+  },
+  {
+    "id": 319,
+    "attributes": 320
+  },
+  2614,
+  {
+    "name": 321,
+    "alternativeText": 254,
+    "caption": 254,
+    "width": 255,
+    "height": 147,
+    "formats": 18,
+    "hash": 322,
+    "ext": 192,
+    "mime": 193,
+    "size": 323,
+    "url": 324,
+    "previewUrl": 18,
+    "provider": 196,
+    "provider_metadata": 18,
+    "createdAt": 325,
+    "updatedAt": 325
+  },
+  "cs-sanctifai-logo.svg",
+  "cs_sanctifai_logo_284950c0ee",
+  12.24,
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/cs_sanctifai_logo_284950c0ee.svg",
+  "2025-04-24T11:42:11.924Z",
+  {
+    "data": 18
+  },
+  {
+    "data": 18
+  },
+  {
+    "data": 329
+  },
+  {
+    "id": 330,
+    "attributes": 331
+  },
+  2575,
+  {
+    "name": 332,
+    "alternativeText": 18,
+    "caption": 18,
+    "width": 190,
+    "height": 110,
+    "formats": 18,
+    "hash": 333,
+    "ext": 192,
+    "mime": 193,
+    "size": 334,
+    "url": 335,
+    "previewUrl": 18,
+    "provider": 196,
+    "provider_metadata": 18,
+    "createdAt": 336,
+    "updatedAt": 336
+  },
+  "youtube_de4bdef50a.svg",
+  "youtube_de4bdef50a_4b3a8b8aac",
+  0.48,
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/youtube_de4bdef50a_4b3a8b8aac.svg",
+  "2025-04-10T10:03:22.163Z",
+  [
+    338,
+    341,
+    344,
+    347,
+    350,
+    353,
+    354,
+    357,
+    360,
+    363,
+    366,
+    369,
+    372,
+    375
+  ],
+  {
+    "id": 5,
+    "url": 339,
+    "label": 340
+  },
+  "/careers",
+  "Careers",
+  {
+    "id": 16,
+    "url": 342,
+    "label": 343
+  },
+  "/case-studies",
+  "Case Studies",
+  {
+    "id": 23,
+    "url": 345,
+    "label": 346
+  },
+  "/affiliates",
+  "Affiliate program",
+  {
+    "id": 27,
+    "url": 348,
+    "label": 349
+  },
+  "/contact",
+  "Contact",
+  {
+    "id": 35,
+    "url": 351,
+    "label": 352
+  },
+  "/vs/zapier/",
+  "Zapier vs n8n",
+  {
+    "id": 39,
+    "url": 107,
+    "label": 108
+  },
+  {
+    "id": 43,
+    "url": 355,
+    "label": 356
+  },
+  "https://merch.n8n.io",
+  "Merch",
+  {
+    "id": 67,
+    "url": 358,
+    "label": 359
+  },
+  "/vs/make/",
+  "Make vs n8n",
+  {
+    "id": 71,
+    "url": 361,
+    "label": 362
+  },
+  "https://internal.users.n8n.cloud/form/n8n-usability-test-signup",
+  "Join user tests, get a gift",
+  {
+    "id": 75,
+    "url": 364,
+    "label": 365
+  },
+  "/press",
+  "Press",
+  {
+    "id": 86,
+    "url": 367,
+    "label": 368
+  },
+  "/tools/",
+  "Tools",
+  {
+    "id": 90,
+    "url": 370,
+    "label": 371
+  },
+  "https://lu.ma/n8n-events",
+  "Events",
+  {
+    "id": 94,
+    "url": 373,
+    "label": 374
+  },
+  "/legal/#security",
+  "Security",
+  {
+    "id": 376,
+    "url": 377,
+    "label": 378
+  },
+  236,
+  "/reports/ai-agent-development-tools",
+  "AI agent report",
+  {
+    "id": 5,
+    "title": 380,
+    "description": 381,
+    "button": 382
+  },
+  "There\u2019s nothing you can\u2019t automate with n8n.",
+  "Our customer\u2019s words, not ours.\nSkeptical? **Try it out**, and see for yourself.",
+  {
+    "id": 5,
+    "text": 383,
+    "url": 384,
+    "type": 385
+  },
+  "Start building",
+  "https://app.n8n.cloud/register",
+  "cta",
+  [
+    387,
+    436,
+    468,
+    511,
+    554,
+    612,
+    655,
+    700
+  ],
+  {
+    "id": 39,
+    "opinion": 388,
+    "person": 389
+  },
+  "**Build complex workflows that other tools can't**. I used other tools before. I got to know the N8N and I say it properly: it is better to do everything on the n8n! Congratulations on your work, you are a star!",
+  {
+    "id": 23,
+    "name": 390,
+    "description": 391,
+    "avatar": 392,
+    "image": 417
+  },
+  "Igor Fediczko",
+  "[@igordisco](https://x.com/@igordisco)",
+  {
+    "data": 393
+  },
+  {
+    "id": 394,
+    "attributes": 395
+  },
+  64,
+  {
+    "Identificator": 396,
+    "createdAt": 397,
+    "updatedAt": 398,
+    "publishedAt": 399,
+    "img": 400
+  },
+  "igor-fediczko",
+  "2022-07-01T06:07:08.213Z",
+  "2024-10-23T13:03:06.586Z",
+  "2022-07-01T06:07:08.774Z",
+  {
+    "id": 401,
+    "alt": 396,
+    "caption": 18,
+    "url": 18,
+    "img": 402,
+    "video": 415,
+    "imgRetina": 416
+  },
+  4343,
+  {
+    "data": 403
+  },
+  {
+    "id": 404,
+    "attributes": 405
+  },
+  370,
+  {
+    "name": 406,
+    "alternativeText": 406,
+    "caption": 406,
+    "width": 407,
+    "height": 407,
+    "formats": 18,
+    "hash": 408,
+    "ext": 409,
+    "mime": 410,
+    "size": 411,
+    "url": 412,
+    "previewUrl": 18,
+    "provider": 196,
+    "provider_metadata": 18,
+    "createdAt": 413,
+    "updatedAt": 414
+  },
+  "igor-fediczko.jpeg",
+  50,
+  "igor_fediczko_8a65a89448",
+  ".jpeg",
+  "image/jpeg",
+  3.14,
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/igor_fediczko_8a65a89448.jpeg",
+  "2022-06-01T11:13:04.994Z",
+  "2023-07-04T07:05:34.432Z",
+  {
+    "data": 18
+  },
+  {
+    "data": 18
+  },
+  {
+    "data": 418
+  },
+  {
+    "id": 419,
+    "attributes": 420
+  },
+  2576,
+  {
+    "name": 421,
+    "alternativeText": 18,
+    "caption": 18,
+    "width": 422,
+    "height": 422,
+    "formats": 423,
+    "hash": 432,
+    "ext": 425,
+    "mime": 410,
+    "size": 433,
+    "url": 434,
+    "previewUrl": 18,
+    "provider": 196,
+    "provider_metadata": 18,
+    "createdAt": 435,
+    "updatedAt": 435
+  },
+  "avatar_igordisco_9243b86232.jpg",
+  400,
+  {
+    "thumbnail": 424
+  },
+  {
+    "ext": 425,
+    "url": 426,
+    "hash": 427,
+    "mime": 410,
+    "name": 428,
+    "path": 18,
+    "size": 429,
+    "width": 430,
+    "height": 430,
+    "sizeInBytes": 431
+  },
+  ".jpg",
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/thumbnail_avatar_igordisco_9243b86232_cd9a5c94ce.jpg",
+  "thumbnail_avatar_igordisco_9243b86232_cd9a5c94ce",
+  "thumbnail_avatar_igordisco_9243b86232.jpg",
+  6.81,
+  156,
+  6812,
+  "avatar_igordisco_9243b86232_cd9a5c94ce",
+  29.39,
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/avatar_igordisco_9243b86232_cd9a5c94ce.jpg",
+  "2025-04-10T10:07:40.814Z",
+  {
+    "id": 23,
+    "opinion": 437,
+    "person": 438
+  },
+  "**Thank you to the n8n community**. I did the beginners course and promptly took an automation WAY beyond my skill level.",
+  {
+    "id": 27,
+    "name": 439,
+    "description": 440,
+    "avatar": 441,
+    "image": 465
+  },
+  "Robin Tindall",
+  "[@robm](https://x.com/@robm)",
+  {
+    "data": 442
+  },
+  {
+    "id": 443,
+    "attributes": 444
+  },
+  68,
+  {
+    "Identificator": 445,
+    "createdAt": 446,
+    "updatedAt": 447,
+    "publishedAt": 448,
+    "img": 449
+  },
+  "neutral-avatar",
+  "2022-07-01T06:12:44.913Z",
+  "2025-05-05T11:13:20.762Z",
+  "2022-07-01T06:12:45.477Z",
+  {
+    "id": 450,
+    "alt": 445,
+    "caption": 18,
+    "url": 18,
+    "img": 451,
+    "video": 463,
+    "imgRetina": 464
+  },
+  7468,
+  {
+    "data": 452
+  },
+  {
+    "id": 453,
+    "attributes": 454
+  },
+  352,
+  {
+    "name": 455,
+    "alternativeText": 455,
+    "caption": 455,
+    "width": 407,
+    "height": 407,
+    "formats": 18,
+    "hash": 456,
+    "ext": 457,
+    "mime": 458,
+    "size": 459,
+    "url": 460,
+    "previewUrl": 18,
+    "provider": 196,
+    "provider_metadata": 18,
+    "createdAt": 461,
+    "updatedAt": 462
+  },
+  "neutral-avatar-purple.PNG",
+  "neutral_avatar_purple_fee36bffe3",
+  ".PNG",
+  "image/png",
+  1.26,
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/neutral_avatar_purple_fee36bffe3.PNG",
+  "2022-06-01T06:40:21.001Z",
+  "2023-07-03T13:04:24.688Z",
+  {
+    "data": 18
+  },
+  {
+    "data": 18
+  },
+  {
+    "data": 466
+  },
+  {
+    "id": 453,
+    "attributes": 467
+  },
+  {
+    "name": 455,
+    "alternativeText": 455,
+    "caption": 455,
+    "width": 407,
+    "height": 407,
+    "formats": 18,
+    "hash": 456,
+    "ext": 457,
+    "mime": 458,
+    "size": 459,
+    "url": 460,
+    "previewUrl": 18,
+    "provider": 196,
+    "provider_metadata": 18,
+    "createdAt": 461,
+    "updatedAt": 462
+  },
+  {
+    "id": 16,
+    "opinion": 469,
+    "person": 470
+  },
+  "**n8n is a beast for automation.** self-hosting and low-code make it a dev\u2019s dream. if you\u2019re not automating yet, you\u2019re working too hard.\n",
+  {
+    "id": 5,
+    "name": 471,
+    "description": 472,
+    "avatar": 473,
+    "image": 495
+  },
+  "Anderoav",
+  "[@Anderoav](https://x.com/anderoav)",
+  {
+    "data": 474
+  },
+  {
+    "id": 475,
+    "attributes": 476
+  },
+  611,
+  {
+    "Identificator": 477,
+    "createdAt": 478,
+    "updatedAt": 479,
+    "publishedAt": 480,
+    "img": 481
+  },
+  "vs-make-logo-white",
+  "2025-04-17T20:58:19.640Z",
+  "2025-05-05T11:13:20.852Z",
+  "2025-04-17T20:58:29.562Z",
+  {
+    "id": 482,
+    "alt": 18,
+    "caption": 18,
+    "url": 18,
+    "img": 483,
+    "video": 493,
+    "imgRetina": 494
+  },
+  7471,
+  {
+    "data": 484
+  },
+  {
+    "id": 485,
+    "attributes": 486
+  },
+  2654,
+  {
+    "name": 487,
+    "alternativeText": 254,
+    "caption": 254,
+    "width": 488,
+    "height": 488,
+    "formats": 18,
+    "hash": 489,
+    "ext": 192,
+    "mime": 193,
+    "size": 490,
+    "url": 491,
+    "previewUrl": 18,
+    "provider": 196,
+    "provider_metadata": 18,
+    "createdAt": 492,
+    "updatedAt": 492
+  },
+  "vs-make-logo.svg",
+  104,
+  "vs_make_logo_dcd974545b",
+  1.13,
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/vs_make_logo_dcd974545b.svg",
+  "2025-05-05T11:11:04.133Z",
+  {
+    "data": 18
+  },
+  {
+    "data": 18
+  },
+  {
+    "data": 496
+  },
+  {
+    "id": 497,
+    "attributes": 498
+  },
+  2577,
+  {
+    "name": 499,
+    "alternativeText": 18,
+    "caption": 18,
+    "width": 422,
+    "height": 422,
+    "formats": 500,
+    "hash": 507,
+    "ext": 425,
+    "mime": 410,
+    "size": 508,
+    "url": 509,
+    "previewUrl": 18,
+    "provider": 196,
+    "provider_metadata": 18,
+    "createdAt": 510,
+    "updatedAt": 510
+  },
+  "avatar_anderoav_589989fc39.jpg",
+  {
+    "thumbnail": 501
+  },
+  {
+    "ext": 425,
+    "url": 502,
+    "hash": 503,
+    "mime": 410,
+    "name": 504,
+    "path": 18,
+    "size": 505,
+    "width": 430,
+    "height": 430,
+    "sizeInBytes": 506
+  },
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/thumbnail_avatar_anderoav_589989fc39_ceb1c71a0c.jpg",
+  "thumbnail_avatar_anderoav_589989fc39_ceb1c71a0c",
+  "thumbnail_avatar_anderoav_589989fc39.jpg",
+  3.41,
+  3414,
+  "avatar_anderoav_589989fc39_ceb1c71a0c",
+  15.7,
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/avatar_anderoav_589989fc39_ceb1c71a0c.jpg",
+  "2025-04-10T10:10:03.441Z",
+  {
+    "id": 27,
+    "opinion": 512,
+    "person": 513
+  },
+  "**I've said it many times. But I'll say it again. n8n is the GOAT**. Anything is possible with n8n. You just need some technical knowledge + imagination. I'm actually looking to start a side project. Just to have an excuse to use n8n more \ud83d\ude05",
+  {
+    "id": 16,
+    "name": 514,
+    "description": 515,
+    "avatar": 516,
+    "image": 537
+  },
+  "Maxim Poulsen",
+  "[@maximpoulsen](https://x.com/@maximpoulsen)",
+  {
+    "data": 517
+  },
+  {
+    "id": 518,
+    "attributes": 519
+  },
+  612,
+  {
+    "Identificator": 520,
+    "createdAt": 521,
+    "updatedAt": 522,
+    "publishedAt": 523,
+    "img": 524
+  },
+  "vs-n8n-logo-white",
+  "2025-04-17T20:58:47.072Z",
+  "2025-05-05T11:18:28.549Z",
+  "2025-04-17T20:58:51.637Z",
+  {
+    "id": 525,
+    "alt": 18,
+    "caption": 18,
+    "url": 18,
+    "img": 526,
+    "video": 535,
+    "imgRetina": 536
+  },
+  7491,
+  {
+    "data": 527
+  },
+  {
+    "id": 528,
+    "attributes": 529
+  },
+  2655,
+  {
+    "name": 530,
+    "alternativeText": 254,
+    "caption": 254,
+    "width": 488,
+    "height": 488,
+    "formats": 18,
+    "hash": 531,
+    "ext": 192,
+    "mime": 193,
+    "size": 532,
+    "url": 533,
+    "previewUrl": 18,
+    "provider": 196,
+    "provider_metadata": 18,
+    "createdAt": 534,
+    "updatedAt": 534
+  },
+  "vs-n8n-logo.svg",
+  "vs_n8n_logo_78e1aa769e",
+  2.44,
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/vs_n8n_logo_78e1aa769e.svg",
+  "2025-05-05T11:11:04.241Z",
+  {
+    "data": 18
+  },
+  {
+    "data": 18
+  },
+  {
+    "data": 538
+  },
+  {
+    "id": 539,
+    "attributes": 540
+  },
+  2578,
+  {
+    "name": 541,
+    "alternativeText": 18,
+    "caption": 18,
+    "width": 422,
+    "height": 422,
+    "formats": 542,
+    "hash": 549,
+    "ext": 409,
+    "mime": 410,
+    "size": 550,
+    "url": 551,
+    "previewUrl": 18,
+    "provider": 196,
+    "provider_metadata": 18,
+    "createdAt": 552,
+    "updatedAt": 553
+  },
+  "avatar_maxim_poulsen_48f450887b.jpeg",
+  {
+    "thumbnail": 543
+  },
+  {
+    "ext": 409,
+    "url": 544,
+    "hash": 545,
+    "mime": 410,
+    "name": 546,
+    "path": 18,
+    "size": 547,
+    "width": 430,
+    "height": 430,
+    "sizeInBytes": 548
+  },
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/thumbnail_avatar_maxim_poulsen_48f450887b_852d0439bc.jpeg",
+  "thumbnail_avatar_maxim_poulsen_48f450887b_852d0439bc",
+  "thumbnail_avatar_maxim_poulsen_48f450887b.jpeg",
+  4.62,
+  4621,
+  "avatar_maxim_poulsen_48f450887b_852d0439bc",
+  25.77,
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/avatar_maxim_poulsen_48f450887b_852d0439bc.jpeg",
+  "2025-04-10T10:10:58.523Z",
+  "2025-04-24T19:23:10.457Z",
+  {
+    "id": 35,
+    "opinion": 555,
+    "person": 556
+  },
+  "**It blows my mind.** I was hating on no-code tools my whole life, but n8n changed everything. Made a Slack agent that can basically do everything, in half an hour. ",
+  {
+    "id": 35,
+    "name": 557,
+    "description": 558,
+    "avatar": 559,
+    "image": 580
+  },
+  "Felix Leber",
+  "[@felixleber](https://www.linkedin.com/in/felixleber/)",
+  {
+    "data": 560
+  },
+  {
+    "id": 561,
+    "attributes": 562
+  },
+  613,
+  {
+    "Identificator": 563,
+    "createdAt": 564,
+    "updatedAt": 565,
+    "publishedAt": 566,
+    "img": 567
+  },
+  "vs-zapier-logo-white",
+  "2025-04-17T21:01:01.969Z",
+  "2025-05-05T11:18:28.579Z",
+  "2025-04-17T21:01:03.782Z",
+  {
+    "id": 568,
+    "alt": 18,
+    "caption": 18,
+    "url": 18,
+    "img": 569,
+    "video": 578,
+    "imgRetina": 579
+  },
+  7492,
+  {
+    "data": 570
+  },
+  {
+    "id": 571,
+    "attributes": 572
+  },
+  2658,
+  {
+    "name": 573,
+    "alternativeText": 254,
+    "caption": 254,
+    "width": 488,
+    "height": 488,
+    "formats": 18,
+    "hash": 574,
+    "ext": 192,
+    "mime": 193,
+    "size": 575,
+    "url": 576,
+    "previewUrl": 18,
+    "provider": 196,
+    "provider_metadata": 18,
+    "createdAt": 577,
+    "updatedAt": 577
+  },
+  "vs-zapier-logo.svg",
+  "vs_zapier_logo_6cbfa0ec4d",
+  1.93,
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/vs_zapier_logo_6cbfa0ec4d.svg",
+  "2025-05-05T11:14:34.228Z",
+  {
+    "data": 18
+  },
+  {
+    "data": 18
+  },
+  {
+    "data": 581
+  },
+  {
+    "id": 582,
+    "attributes": 583
+  },
+  2579,
+  {
+    "name": 584,
+    "alternativeText": 18,
+    "caption": 18,
+    "width": 585,
+    "height": 585,
+    "formats": 586,
+    "hash": 607,
+    "ext": 409,
+    "mime": 410,
+    "size": 608,
+    "url": 609,
+    "previewUrl": 18,
+    "provider": 196,
+    "provider_metadata": 18,
+    "createdAt": 610,
+    "updatedAt": 611
+  },
+  "Felix_Leber_f7a5b3c776.jpeg",
+  800,
+  {
+    "small": 587,
+    "medium": 594,
+    "thumbnail": 601
+  },
+  {
+    "ext": 409,
+    "url": 588,
+    "hash": 589,
+    "mime": 410,
+    "name": 590,
+    "path": 18,
+    "size": 591,
+    "width": 592,
+    "height": 592,
+    "sizeInBytes": 593
+  },
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/small_Felix_Leber_f7a5b3c776_130aeca79d.jpeg",
+  "small_Felix_Leber_f7a5b3c776_130aeca79d",
+  "small_Felix_Leber_f7a5b3c776.jpeg",
+  27.77,
+  500,
+  27766,
+  {
+    "ext": 409,
+    "url": 595,
+    "hash": 596,
+    "mime": 410,
+    "name": 597,
+    "path": 18,
+    "size": 598,
+    "width": 599,
+    "height": 599,
+    "sizeInBytes": 600
+  },
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/medium_Felix_Leber_f7a5b3c776_130aeca79d.jpeg",
+  "medium_Felix_Leber_f7a5b3c776_130aeca79d",
+  "medium_Felix_Leber_f7a5b3c776.jpeg",
+  51.32,
+  750,
+  51316,
+  {
+    "ext": 409,
+    "url": 602,
+    "hash": 603,
+    "mime": 410,
+    "name": 604,
+    "path": 18,
+    "size": 605,
+    "width": 430,
+    "height": 430,
+    "sizeInBytes": 606
+  },
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/thumbnail_Felix_Leber_f7a5b3c776_130aeca79d.jpeg",
+  "thumbnail_Felix_Leber_f7a5b3c776_130aeca79d",
+  "thumbnail_Felix_Leber_f7a5b3c776.jpeg",
+  5.12,
+  5117,
+  "Felix_Leber_f7a5b3c776_130aeca79d",
+  87.74,
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Felix_Leber_f7a5b3c776_130aeca79d.jpeg",
+  "2025-04-10T10:16:11.524Z",
+  "2025-04-24T13:07:46.905Z",
+  {
+    "id": 67,
+    "opinion": 613,
+    "person": 614
+  },
+  "I just have to say, **n8n's integration with third-party services is absolutely mind-blowing**. It's like having a Swiss Army knife for automation. So many tasks become a breeze, and I can quickly validate and implement my ideas without any hassle.",
+  {
+    "id": 39,
+    "name": 615,
+    "description": 616,
+    "avatar": 617,
+    "image": 639
+  },
+  "Nanbing",
+  "[@1ronben](https://x.com/1ronben)",
+  {
+    "data": 618
+  },
+  {
+    "id": 619,
+    "attributes": 620
+  },
+  614,
+  {
+    "Identificator": 621,
+    "createdAt": 622,
+    "updatedAt": 623,
+    "publishedAt": 624,
+    "img": 625
+  },
+  "vs-zapier-logo-color",
+  "2025-04-18T11:46:21.920Z",
+  "2025-05-05T11:18:28.606Z",
+  "2025-04-18T11:46:23.689Z",
+  {
+    "id": 626,
+    "alt": 18,
+    "caption": 18,
+    "url": 18,
+    "img": 627,
+    "video": 637,
+    "imgRetina": 638
+  },
+  7493,
+  {
+    "data": 628
+  },
+  {
+    "id": 629,
+    "attributes": 630
+  },
+  2659,
+  {
+    "name": 631,
+    "alternativeText": 254,
+    "caption": 254,
+    "width": 632,
+    "height": 632,
+    "formats": 18,
+    "hash": 633,
+    "ext": 192,
+    "mime": 193,
+    "size": 634,
+    "url": 635,
+    "previewUrl": 18,
+    "provider": 196,
+    "provider_metadata": 18,
+    "createdAt": 636,
+    "updatedAt": 636
+  },
+  "vs-zapier-logo-color.svg",
+  48,
+  "vs_zapier_logo_color_a6ad21d615",
+  1.71,
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/vs_zapier_logo_color_a6ad21d615.svg",
+  "2025-05-05T11:14:34.310Z",
+  {
+    "data": 18
+  },
+  {
+    "data": 18
+  },
+  {
+    "data": 640
+  },
+  {
+    "id": 641,
+    "attributes": 642
+  },
+  2580,
+  {
+    "name": 643,
+    "alternativeText": 18,
+    "caption": 18,
+    "width": 422,
+    "height": 422,
+    "formats": 644,
+    "hash": 651,
+    "ext": 425,
+    "mime": 410,
+    "size": 652,
+    "url": 653,
+    "previewUrl": 18,
+    "provider": 196,
+    "provider_metadata": 18,
+    "createdAt": 654,
+    "updatedAt": 654
+  },
+  "avatar_Ironben_0a4b3e7d12.jpg",
+  {
+    "thumbnail": 645
+  },
+  {
+    "ext": 425,
+    "url": 646,
+    "hash": 647,
+    "mime": 410,
+    "name": 648,
+    "path": 18,
+    "size": 649,
+    "width": 430,
+    "height": 430,
+    "sizeInBytes": 650
+  },
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/thumbnail_avatar_Ironben_0a4b3e7d12_e35805265c.jpg",
+  "thumbnail_avatar_Ironben_0a4b3e7d12_e35805265c",
+  "thumbnail_avatar_Ironben_0a4b3e7d12.jpg",
+  4.31,
+  4307,
+  "avatar_Ironben_0a4b3e7d12_e35805265c",
+  16.42,
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/avatar_Ironben_0a4b3e7d12_e35805265c.jpg",
+  "2025-04-10T10:17:22.281Z",
+  {
+    "id": 71,
+    "opinion": 656,
+    "person": 657
+  },
+  "**Found the holy grail of automation yesterday...** Yesterday I tried n8n and it blew my mind \ud83e\udd2f What would've taken me 3 days to code from scratch? Done in 2 hours. The best part? If you still want to get your hands dirty with code (because let's be honest, we developers can't help ourselves \ud83d\ude05), you can just drop in custom code nodes. Zero restrictions.\n",
+  {
+    "id": 43,
+    "name": 658,
+    "description": 659,
+    "avatar": 660,
+    "image": 684
+  },
+  "Francois La\u00dfl",
+  "[@francois-la\u00dfl](https://www.linkedin.com/in/francois-la%C3%9Fl-817937243/)",
+  {
+    "data": 661
+  },
+  {
+    "id": 662,
+    "attributes": 663
+  },
+  615,
+  {
+    "Identificator": 664,
+    "createdAt": 665,
+    "updatedAt": 666,
+    "publishedAt": 667,
+    "img": 668
+  },
+  "career-icon-founds",
+  "2025-04-23T13:41:00.814Z",
+  "2025-06-10T07:48:30.391Z",
+  "2025-04-23T13:41:03.460Z",
+  {
+    "id": 669,
+    "alt": 670,
+    "caption": 18,
+    "url": 18,
+    "img": 671,
+    "video": 682,
+    "imgRetina": 683
+  },
+  8187,
+  "+$90m in funding",
+  {
+    "data": 672
+  },
+  {
+    "id": 673,
+    "attributes": 674
+  },
+  2674,
+  {
+    "name": 675,
+    "alternativeText": 254,
+    "caption": 254,
+    "width": 676,
+    "height": 676,
+    "formats": 18,
+    "hash": 677,
+    "ext": 678,
+    "mime": 458,
+    "size": 679,
+    "url": 680,
+    "previewUrl": 18,
+    "provider": 196,
+    "provider_metadata": 18,
+    "createdAt": 681,
+    "updatedAt": 681
+  },
+  "career-icon-founds.png",
+  96,
+  "career_icon_founds_712fcc5e4c",
+  ".png",
+  21.05,
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/career_icon_founds_712fcc5e4c.png",
+  "2025-05-05T11:19:31.020Z",
+  {
+    "data": 18
+  },
+  {
+    "data": 18
+  },
+  {
+    "data": 685
+  },
+  {
+    "id": 686,
+    "attributes": 687
+  },
+  2581,
+  {
+    "name": 688,
+    "alternativeText": 18,
+    "caption": 18,
+    "width": 422,
+    "height": 422,
+    "formats": 689,
+    "hash": 696,
+    "ext": 409,
+    "mime": 410,
+    "size": 697,
+    "url": 698,
+    "previewUrl": 18,
+    "provider": 196,
+    "provider_metadata": 18,
+    "createdAt": 699,
+    "updatedAt": 699
+  },
+  "Francois_lassl_d5cfb504c7.jpeg",
+  {
+    "thumbnail": 690
+  },
+  {
+    "ext": 409,
+    "url": 691,
+    "hash": 692,
+    "mime": 410,
+    "name": 693,
+    "path": 18,
+    "size": 694,
+    "width": 430,
+    "height": 430,
+    "sizeInBytes": 695
+  },
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/thumbnail_Francois_lassl_d5cfb504c7_710c87121d.jpeg",
+  "thumbnail_Francois_lassl_d5cfb504c7_710c87121d",
+  "thumbnail_Francois_lassl_d5cfb504c7.jpeg",
+  3.75,
+  3748,
+  "Francois_lassl_d5cfb504c7_710c87121d",
+  19.3,
+  "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Francois_lassl_d5cfb504c7_710c87121d.jpeg",
+  "2025-04-10T10:18:19.474Z",
+  {
+    "id": 43,
+    "opinion": 701,
+    "person": 702
+  },
+  "**Anything is possible with n8n**. I think @n8n_io Cloud version is great, they are doing amazing stuff and I love that everything is available to look at on Github.",
+  {
+    "id": 67,
+    "name": 703,
+    "description": 704,
+    "avatar": 705,
+    "image": 714
+  },
+  "Jodie M",
+  "[@jodiem](https://x.com/@jodiem)",
+  {
+    "data": 706
+  },
+  {
+    "id": 443,
+    "attributes": 707
+  },
+  {
+    "Identificator": 445,
+    "createdAt": 446,
+    "updatedAt": 447,
+    "publishedAt": 448,
+    "img": 708
+  },
+  {
+    "id": 450,
+    "alt": 445,
+    "caption": 18,
+    "url": 18,
+    "img": 709,
+    "video": 712,
+    "imgRetina": 713
+  },
+  {
+    "data": 710
+  },
+  {
+    "id": 453,
+    "attributes": 711
+  },
+  {
+    "name": 455,
+    "alternativeText": 455,
+    "caption": 455,
+    "width": 407,
+    "height": 407,
+    "formats": 18,
+    "hash": 456,
+    "ext": 457,
+    "mime": 458,
+    "size": 459,
+    "url": 460,
+    "previewUrl": 18,
+    "provider": 196,
+    "provider_metadata": 18,
+    "createdAt": 461,
+    "updatedAt": 462
+  },
+  {
+    "data": 18
+  },
+  {
+    "data": 18
+  },
+  {
+    "data": 715
+  },
+  {
+    "id": 453,
+    "attributes": 716
+  },
+  {
+    "name": 455,
+    "alternativeText": 455,
+    "caption": 455,
+    "width": 407,
+    "height": 407,
+    "formats": 18,
+    "hash": 456,
+    "ext": 457,
+    "mime": 458,
+    "size": 459,
+    "url": 460,
+    "previewUrl": 18,
+    "provider": 196,
+    "provider_metadata": 18,
+    "createdAt": 461,
+    "updatedAt": 462
+  },
+  113913,
+  {
+    "left": 122,
+    "top": 122,
+    "width": 190,
+    "height": 190,
+    "rotate": 122,
+    "vFlip": 124,
+    "hFlip": 124,
+    "body": 719
+  },
+  "<path fill=\"currentColor\" d=\"M12 2.247a10 10 0 0 0-3.162 19.487c.5.088.687-.212.687-.475c0-.237-.012-1.025-.012-1.862c-2.513.462-3.163-.613-3.363-1.175a3.64 3.64 0 0 0-1.025-1.413c-.35-.187-.85-.65-.013-.662a2 2 0 0 1 1.538 1.025a2.137 2.137 0 0 0 2.912.825a2.1 2.1 0 0 1 .638-1.338c-2.225-.25-4.55-1.112-4.55-4.937a3.9 3.9 0 0 1 1.025-2.688a3.6 3.6 0 0 1 .1-2.65s.837-.262 2.75 1.025a9.43 9.43 0 0 1 5 0c1.912-1.3 2.75-1.025 2.75-1.025a3.6 3.6 0 0 1 .1 2.65a3.87 3.87 0 0 1 1.025 2.688c0 3.837-2.338 4.687-4.562 4.937a2.37 2.37 0 0 1 .674 1.85c0 1.338-.012 2.413-.012 2.75c0 .263.187.575.687.475A10.005 10.005 0 0 0 12 2.247\"/>",
+  {
+    "id": 5,
+    "createdAt": 721,
+    "updatedAt": 722,
+    "columns": 723
+  },
+  "2024-06-26T14:39:19.189Z",
+  "2025-05-08T11:30:32.143Z",
+  [
+    724,
+    766,
+    800,
+    840,
+    883
+  ],
+  {
+    "id": 5,
+    "columnName": 725,
+    "autofillOptions": 726,
+    "bottomLink": 20,
+    "bottomLinkLabel": 727,
+    "links": 728
+  },
+  "Popular integrations",
+  "popular_integrations",
+  "Show more integrations",
+  [
+    729,
+    732,
+    736,
+    740,
+    744,
+    746,
+    750,
+    754,
+    758,
+    762
+  ],
+  {
+    "id": 730,
+    "columnLink": 145,
+    "columnLinkLabel": 731
+  },
+  31,
+  "Google Sheets",
+  {
+    "id": 733,
+    "columnLink": 734,
+    "columnLinkLabel": 735
+  },
+  32,
+  "/integrations/telegram/",
+  "Telegram",
+  {
+    "id": 737,
+    "columnLink": 738,
+    "columnLinkLabel": 739
+  },
+  33,
+  "/integrations/mysql/",
+  "MySQL",
+  {
+    "id": 741,
+    "columnLink": 742,
+    "columnLinkLabel": 743
+  },
+  34,
+  "/integrations/slack/",
+  "Slack",
+  {
+    "id": 745,
+    "columnLink": 148,
+    "columnLinkLabel": 92
+  },
+  35,
+  {
+    "id": 747,
+    "columnLink": 748,
+    "columnLinkLabel": 749
+  },
+  36,
+  "/integrations/postgres/",
+  "Postgres",
+  {
+    "id": 751,
+    "columnLink": 752,
+    "columnLinkLabel": 753
+  },
+  37,
+  "/integrations/notion/",
+  "Notion",
+  {
+    "id": 755,
+    "columnLink": 756,
+    "columnLinkLabel": 757
+  },
+  38,
+  "/integrations/gmail/",
+  "Gmail",
+  {
+    "id": 759,
+    "columnLink": 760,
+    "columnLinkLabel": 761
+  },
+  40,
+  "/integrations/airtable/",
+  "Airtable",
+  {
+    "id": 763,
+    "columnLink": 764,
+    "columnLinkLabel": 765
+  },
+  39,
+  "/integrations/google-drive/",
+  "Google Drive",
+  {
+    "id": 16,
+    "columnName": 767,
+    "autofillOptions": 18,
+    "bottomLink": 768,
+    "bottomLinkLabel": 727,
+    "links": 769
+  },
+  "Trending combinations",
+  "/integrations/",
+  [
+    770,
+    773,
+    776,
+    779,
+    782,
+    785,
+    788,
+    791,
+    794,
+    797
+  ],
+  {
+    "id": 23,
+    "columnLink": 771,
+    "columnLinkLabel": 772
+  },
+  "/integrations/hubspot/and/salesforce/",
+  "HubSpot and Salesforce",
+  {
+    "id": 5,
+    "columnLink": 774,
+    "columnLinkLabel": 775
+  },
+  "/integrations/twilio/and/whatsapp-business-cloud/",
+  "Twilio and WhatsApp",
+  {
+    "id": 16,
+    "columnLink": 777,
+    "columnLinkLabel": 778
+  },
+  "/integrations/github/and/jira-software/",
+  "GitHub and Jira",
+  {
+    "id": 27,
+    "columnLink": 780,
+    "columnLinkLabel": 781
+  },
+  "/integrations/asana/and/slack/",
+  "Asana and Slack",
+  {
+    "id": 35,
+    "columnLink": 783,
+    "columnLinkLabel": 784
+  },
+  "/integrations/asana/and/salesforce/",
+  "Asana and Salesforce",
+  {
+    "id": 39,
+    "columnLink": 786,
+    "columnLinkLabel": 787
+  },
+  "/integrations/jira-software/and/slack/",
+  "Jira and Slack",
+  {
+    "id": 43,
+    "columnLink": 789,
+    "columnLinkLabel": 790
+  },
+  "/integrations/jira-software/and/salesforce/",
+  "Jira and Salesforce",
+  {
+    "id": 67,
+    "columnLink": 792,
+    "columnLinkLabel": 793
+  },
+  "/integrations/github/and/slack/",
+  "GitHub and Slack",
+  {
+    "id": 71,
+    "columnLink": 795,
+    "columnLinkLabel": 796
+  },
+  "/integrations/hubspot/and/quickbooks-online/",
+  "HubSpot and QuickBooks",
+  {
+    "id": 75,
+    "columnLink": 798,
+    "columnLinkLabel": 799
+  },
+  "/integrations/hubspot/and/slack/",
+  "HubSpot and Slack",
+  {
+    "id": 27,
+    "columnName": 801,
+    "autofillOptions": 802,
+    "bottomLink": 768,
+    "bottomLinkLabel": 803,
+    "links": 804
+  },
+  "Top integration categories",
+  "top_integration_categories",
+  "Explore more categories",
+  [
+    805,
+    808,
+    811,
+    815,
+    817,
+    820,
+    824,
+    828,
+    832,
+    836
+  ],
+  {
+    "id": 51,
+    "columnLink": 806,
+    "columnLinkLabel": 807
+  },
+  "/integrations/categories/communication/",
+  "Communication",
+  {
+    "id": 79,
+    "columnLink": 809,
+    "columnLinkLabel": 810
+  },
+  "/integrations/categories/development/",
+  "Development",
+  {
+    "id": 812,
+    "columnLink": 813,
+    "columnLinkLabel": 814
+  },
+  23,
+  "/integrations/categories/cybersecurity/",
+  "Cybersecurity",
+  {
+    "id": 190,
+    "columnLink": 816,
+    "columnLinkLabel": 29
+  },
+  "/integrations/categories/ai/",
+  {
+    "id": 227,
+    "columnLink": 818,
+    "columnLinkLabel": 819
+  },
+  "/integrations/categories/data-and-storage/",
+  "Data & Storage",
+  {
+    "id": 821,
+    "columnLink": 822,
+    "columnLinkLabel": 823
+  },
+  27,
+  "/integrations/categories/marketing/",
+  "Marketing",
+  {
+    "id": 825,
+    "columnLink": 826,
+    "columnLinkLabel": 827
+  },
+  26,
+  "/integrations/categories/productivity/",
+  "Productivity",
+  {
+    "id": 829,
+    "columnLink": 830,
+    "columnLinkLabel": 831
+  },
+  28,
+  "/integrations/categories/sales/",
+  "Sales",
+  {
+    "id": 833,
+    "columnLink": 834,
+    "columnLinkLabel": 835
+  },
+  29,
+  "/integrations/categories/utility/",
+  "Utility",
+  {
+    "id": 837,
+    "columnLink": 838,
+    "columnLinkLabel": 839
+  },
+  30,
+  "/integrations/categories/miscellaneous/",
+  "Miscellaneous",
+  {
+    "id": 35,
+    "columnName": 841,
+    "autofillOptions": 842,
+    "bottomLink": 843,
+    "bottomLinkLabel": 844,
+    "links": 845
+  },
+  "Trending templates",
+  "top_templates",
+  "/workflows/",
+  "Explore 800+ workflow templates",
+  [
+    846,
+    850,
+    854,
+    857,
+    861,
+    865,
+    869,
+    872,
+    876,
+    880
+  ],
+  {
+    "id": 847,
+    "columnLink": 848,
+    "columnLinkLabel": 849
+  },
+  42,
+  "/workflows/1750-creating-an-api-endpoint/",
+  "Creating an API endpoint",
+  {
+    "id": 851,
+    "columnLink": 852,
+    "columnLinkLabel": 853
+  },
+  41,
+  "/workflows/1954-ai-agent-chat/",
+  "AI agent chat",
+  {
+    "id": 135,
+    "columnLink": 855,
+    "columnLinkLabel": 856
+  },
+  "/workflows/1951-scrape-and-summarize-webpages-with-ai/",
+  "Scrape and summarize webpages with AI",
+  {
+    "id": 858,
+    "columnLink": 859,
+    "columnLinkLabel": 860
+  },
+  44,
+  "/workflows/1747-joining-different-datasets/",
+  "Joining different datasets",
+  {
+    "id": 862,
+    "columnLink": 863,
+    "columnLinkLabel": 864
+  },
+  45,
+  "/workflows/1534-back-up-your-n8n-workflows-to-github/",
+  "Back Up Your n8n Workflows To Github",
+  {
+    "id": 866,
+    "columnLink": 867,
+    "columnLinkLabel": 868
+  },
+  46,
+  "/workflows/1700-very-quick-quickstart/",
+  "Very quick quickstart",
+  {
+    "id": 632,
+    "columnLink": 870,
+    "columnLinkLabel": 871
+  },
+  "/workflows/1862-openai-gpt-3-company-enrichment-from-website-content/",
+  "OpenAI GPT-3: Company Enrichment from website content",
+  {
+    "id": 873,
+    "columnLink": 874,
+    "columnLinkLabel": 875
+  },
+  47,
+  "/workflows/1748-pulling-data-from-services-that-n8n-doesnt-have-a-pre-built-integration-for/",
+  "Pulling data from services that n8n doesn\u2019t have a pre-built integration for",
+  {
+    "id": 877,
+    "columnLink": 878,
+    "columnLinkLabel": 879
+  },
+  49,
+  "/workflows/1435-convert-json-to-an-excel-file/",
+  "Convert JSON to an Excel file",
+  {
+    "id": 407,
+    "columnLink": 881,
+    "columnLinkLabel": 882
+  },
+  "/workflows/1934-telegram-ai-chatbot/",
+  "Telegram AI Chatbot",
+  {
+    "id": 39,
+    "columnName": 884,
+    "autofillOptions": 18,
+    "bottomLink": 95,
+    "bottomLinkLabel": 885,
+    "links": 886
+  },
+  "Top guides",
+  "Show guides",
+  [
+    887,
+    891,
+    895,
+    899,
+    903,
+    907,
+    911,
+    915,
+    919,
+    923
+  ],
+  {
+    "id": 888,
+    "columnLink": 889,
+    "columnLinkLabel": 890
+  },
+  51,
+  "https://blog.n8n.io/telegram-bots/",
+  "Telegram bots",
+  {
+    "id": 892,
+    "columnLink": 893,
+    "columnLinkLabel": 894
+  },
+  54,
+  "https://blog.n8n.io/open-source-chatbot/",
+  "Open-source chatbot",
+  {
+    "id": 896,
+    "columnLink": 897,
+    "columnLinkLabel": 898
+  },
+  52,
+  "https://blog.n8n.io/open-source-llm/",
+  "Open-source LLM",
+  {
+    "id": 900,
+    "columnLink": 901,
+    "columnLinkLabel": 902
+  },
+  53,
+  "https://blog.n8n.io/open-source-low-code-platforms/",
+  "Open-source low-code platforms",
+  {
+    "id": 904,
+    "columnLink": 905,
+    "columnLinkLabel": 906
+  },
+  55,
+  "https://blog.n8n.io/free-zapier-alternatives/",
+  "Zapier alternatives",
+  {
+    "id": 908,
+    "columnLink": 909,
+    "columnLinkLabel": 910
+  },
+  56,
+  "https://blog.n8n.io/make-vs-zapier/",
+  "Make vs Zapier",
+  {
+    "id": 912,
+    "columnLink": 913,
+    "columnLinkLabel": 914
+  },
+  57,
+  "https://blog.n8n.io/ai-agents/",
+  "AI agents",
+  {
+    "id": 916,
+    "columnLink": 917,
+    "columnLinkLabel": 918
+  },
+  58,
+  "https://blog.n8n.io/ai-coding-assistants/",
+  "AI coding assistants",
+  {
+    "id": 920,
+    "columnLink": 921,
+    "columnLinkLabel": 922
+  },
+  59,
+  "https://blog.n8n.io/create-chatgpt-discord-bot/",
+  "ChatGPT Discord bot",
+  {
+    "id": 147,
+    "columnLink": 924,
+    "columnLinkLabel": 925
+  },
+  "https://blog.n8n.io/best-ai-chatbot/",
+  "Best AI chatbot",
+  [
+    "Reactive",
+    927
+  ],
+  {
+    "$sisNavbarHidden": 124,
+    "$sworkflowViewerModal": 124,
+    "$ssite-config": 928
+  },
+  {
+    "_priority": 929,
+    "env": 932,
+    "indexable": 140,
+    "name": 933,
+    "trailingSlash": 140,
+    "url": 934
+  },
+  {
+    "name": 930,
+    "env": 931,
+    "url": 930,
+    "trailingSlash": 930,
+    "indexable": 930
+  },
+  -3,
+  -15,
+  "production",
+  "n8n.io",
+  "https://n8n.io",
+  [
+    "Set"
+  ],
+  [
+    "ShallowReactive",
+    937
+  ],
+  {
+    "mainMenu": 18,
+    "get-workflow-1941-send-google-sheets-data-as-a-message-to-a-discord-channel": 18,
+    "footer": 18,
+    "i-ph:caret-down": 18,
+    "githubCount": 18,
+    "i-ph:arrow-left": 18,
+    "sub-footer": 18,
+    "i-uil:github": 18
+  },
+  {
+    "user": 939
+  },
+  {
+    "n8nVersion": -1,
+    "role": -1,
+    "activeWorkflowCount": -1
+  }
+]

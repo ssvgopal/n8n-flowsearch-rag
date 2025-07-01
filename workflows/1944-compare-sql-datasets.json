@@ -1,0 +1,20 @@
+{
+  "name": "Compare SQL datasets | n8n workflow template",
+  "description": "This workflow compares 2 datasets from a single database.Two SQL nodes create a slightly different summary report based on the payments table.Both reports have ",
+  "url": "https://n8n.io/workflows/1944-compare-sql-datasets/",
+  "@type": "WebApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": 0,
+    "priceCurrency": "EUR"
+  },
+  "@context": "https://schema.org",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "bestRating": 5,
+    "ratingCount": 27,
+    "ratingValue": 4.6
+  },
+  "operatingSystem": "all",
+  "applicationCategory": "BusinessApplication"
+}
