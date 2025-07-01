@@ -1,1 +1,1 @@
-web: python n8n_rag_service.py 
+web: python app.py 
