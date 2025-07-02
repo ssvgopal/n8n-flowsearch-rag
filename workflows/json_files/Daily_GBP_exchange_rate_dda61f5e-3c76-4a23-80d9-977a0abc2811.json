@@ -1,0 +1,199 @@
+{
+  "id": "1dDBLH3zWE4dDawo",
+  "meta": {
+    "instanceId": "a2eaba9e45ad7aab18b25cf863df1e910fb6dd3b85279bde97d9bae4a72f6862",
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Daily GBP exchange rate",
+  "tags": [],
+  "nodes": [
+    {
+      "id": "25a32967-fbef-40e9-baa6-c53dc7f69d85",
+      "name": "When clicking ‘Execute workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {},
+      "typeVersion": 1
+    },
+    {
+      "id": "6e2a8b57-c19d-40d5-9546-c904f4525728",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        220,
+        0
+      ],
+      "parameters": {
+        "url": "http://data.fixer.io/api/latest?access_key=30f059a57833bce0031c7d08bc3825c2&base=EUR&symbols=USD,AUD,CAD",
+        "options": {}
+      },
+      "typeVersion": 4.2
+    },
+    {
+      "id": "00fade03-af5a-410f-9eea-b41c9863a98f",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        440,
+        0
+      ],
+      "parameters": {
+        "jsCode": "// Contoh respons (biasanya didapat dari node HTTP Request)\nconst response = items[0].json;\n\n// Mulai tabel HTML\nlet html = `<table border=\"1\" cellpadding=\"5\" cellspacing=\"0\">\n  <thead>\n    <tr>\n      <th>Currency</th>\n      <th>Rate (vs GBP})</th>\n    </tr>\n  </thead>\n  <tbody>`;\n\n// Isi baris dari objek rates\nfor (const [currency, rate] of Object.entries(response.rates)) {\n  html += `<tr><td>${currency}</td><td>${rate}</td></tr>`;\n}\n\nhtml += `</tbody></table>`;\n\n// Kembalikan HTML sebagai output\nreturn [{ json: { htmlTable: html } }];\n"
+      },
+      "typeVersion": 2
+    },
+    {
+      "id": "d609281c-92cf-4d65-9ff7-44f4bd11cd0b",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -200,
+        -200
+      ],
+      "parameters": {
+        "height": 140,
+        "content": "## Instruction\n\nThis workflow send daily email to desired adress with exchnage rates for GBP."
+      },
+      "typeVersion": 1
+    },
+    {
+      "id": "0ed73dfc-cb4f-460f-8819-4ecfd9848533",
+      "name": "send email to adress",
+      "type": "n8n-nodes-base.gmail",
+      "position": [
+        640,
+        0
+      ],
+      "webhookId": "e9a0873c-8949-401c-9088-d240bb7de25a",
+      "parameters": {
+        "sendTo": "miha.ambroz@n8n.io",
+        "message": "={{ $json.htmlTable }}",
+        "options": {},
+        "subject": "rates"
+      },
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "VVLm2UzmGbMNTTNO",
+          "name": "Gmail account 2"
+        }
+      },
+      "typeVersion": 2.1
+    },
+    {
+      "id": "63b058fd-c9a7-44ee-8356-d1731448922e",
+      "name": "Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [
+        880,
+        0
+      ],
+      "parameters": {
+        "columns": {
+          "value": {
+            "Date": "={{ $('HTTP Request').item.json.date }}",
+            "Rate": "={{ $('HTTP Request').item.json.rates.USD }}",
+            "Currency": "={{ $('HTTP Request').item.json.base }}"
+          },
+          "schema": [
+            {
+              "id": "Date",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "Date",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Currency",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "Currency",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Rate",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "Rate",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            }
+          ],
+          "mappingMode": "defineBelow",
+          "matchingColumns": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {},
+        "operation": "append",
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gid=0",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1cO7Qo4g8o5zaXi54KmqzZYDDHw0yFLJ_-BPyNnLfOG8/edit#gid=0",
+          "cachedResultName": "Sheet1"
+        },
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1cO7Qo4g8o5zaXi54KmqzZYDDHw0yFLJ_-BPyNnLfOG8"
+        }
+      },
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "KEkXl3MqpfWNarDZ",
+          "name": "Google Sheets account 2"
+        }
+      },
+      "typeVersion": 4.6
+    }
+  ],
+  "active": false,
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "4a9a7ee5-89b5-4b1f-9670-2e7169782640",
+  "connections": {
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "send email to adress",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

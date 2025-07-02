@@ -1,0 +1,726 @@
+{
+  "meta": {
+    "instanceId": "d1786ab0d745a7498abf13a9c2cdabb1374c006e889b79eef64ce0386b8f8a41"
+  },
+  "nodes": [
+    {
+      "id": "4bfb09fc-fb78-43bb-9390-122d422b53d4",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        1020,
+        420
+      ],
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "credentials": {
+        "openAiApi": {
+          "id": "MGwGMKEkdcjzlYCw",
+          "name": "OpenAi account"
+        }
+      },
+      "typeVersion": 1.2
+    },
+    {
+      "id": "8da08588-e83e-4bec-95b1-cb44614570fb",
+      "name": "Structured Output Parser",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "position": [
+        1240,
+        420
+      ],
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"invoice_number\": \"\",\n  \"invoice_date\": \"\",\n  \"due_date\": \"\",\n  \"vendor_name\": \"\",\n  \"total_amount\": \"\",\n  \"currency\": \"\",\n  \"items\": [\n    {\n      \"description\": \"\",\n      \"amount\": \"\"\n    }\n  ],\n  \"tax\": \"\",\n  \"category\": \"\"\n}"
+      },
+      "typeVersion": 1.2
+    },
+    {
+      "id": "453d73c0-82b3-4cd5-9f3f-b2a903139421",
+      "name": "Invoice Folder Monitor",
+      "type": "n8n-nodes-base.googleDriveTrigger",
+      "position": [
+        360,
+        0
+      ],
+      "parameters": {
+        "event": "fileCreated",
+        "options": {},
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "triggerOn": "specificFolder",
+        "folderToWatch": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1KJ4fvXcKVMGJunsKvPYf8PkX5K9SVwFk"
+        }
+      },
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "SEUhrgz30NMJS3cH",
+          "name": "Google Drive account"
+        }
+      },
+      "typeVersion": 1
+    },
+    {
+      "id": "027f77c5-d98e-4549-be3f-8056347dea63",
+      "name": "Download Invoice PDF",
+      "type": "n8n-nodes-base.googleDrive",
+      "position": [
+        560,
+        0
+      ],
+      "parameters": {
+        "fileId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $json.id }}"
+        },
+        "options": {},
+        "operation": "download"
+      },
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "SEUhrgz30NMJS3cH",
+          "name": "Google Drive account"
+        }
+      },
+      "typeVersion": 3
+    },
+    {
+      "id": "4a3db8c1-c0e1-41b3-a34c-756c12b0b828",
+      "name": "Invoice Parser AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        1040,
+        220
+      ],
+      "parameters": {
+        "text": "=You are an intelligent invoice parser. I will give you raw text extracted from a PDF invoice. \n\n========================\nSTART OF RAW INVOICE TEXT\n\n{{ $json.text }}\n\nEND OF RAW INVOICE TEXT\n========================\n\nYour job is to:\n\n1. Extract key information from the invoice such as:\n   - invoice_number\n   - invoice_date\n   - due_date (if available)\n   - vendor_name\n   - total_amount\n   - currency (e.g., USD, IDR, etc.)\n   - items (as a list of item descriptions and their amounts)\n   - tax (if available)\n\n2. Detect the invoice **category**, such as:\n   - Utilities\n   - Office Supplies\n   - Travel\n   - Software\n   - Food & Beverage\n   - Others (if unknown)\n\n3. Return the result in this exact JSON format:\n\n```json\n{\n  \"invoice_number\": \"\",\n  \"invoice_date\": \"\",\n  \"due_date\": \"\",\n  \"vendor_name\": \"\",\n  \"total_amount\": \"\",\n  \"currency\": \"\",\n  \"items\": [\n    {\n      \"description\": \"\",\n      \"amount\": \"\"\n    }\n  ],\n  \"tax\": \"\",\n  \"category\": \"\"\n}\n",
+        "options": {},
+        "promptType": "define",
+        "hasOutputParser": true
+      },
+      "typeVersion": 1.9
+    },
+    {
+      "id": "52ad3889-ec04-4f4a-87c6-8c29198df234",
+      "name": "Insert Invoice Data",
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [
+        1920,
+        220
+      ],
+      "parameters": {
+        "columns": {
+          "value": {
+            "Tax": "={{ $('Invoice Parser AI Agent').item.json.output.tax }}",
+            "Items": "={{ $('Invoice Parser AI Agent').item.json.output.items }}",
+            "Approved": "={{ $json.data['Approve Invoice?'] }}",
+            "Category": "={{ $('Invoice Parser AI Agent').item.json.output.category }}",
+            "Currency": "={{ $('Invoice Parser AI Agent').item.json.output.currency }}",
+            "Due Date": "={{ $('Invoice Parser AI Agent').item.json.output.due_date }}",
+            "Reviewed By": "={{ $json.data['Reviewed By'] }}",
+            "Vendor Name": "={{ $('Invoice Parser AI Agent').item.json.output.vendor_name }}",
+            "Invoice Date": "={{ $('Invoice Parser AI Agent').item.json.output.invoice_date }}",
+            "Total Amount": "={{ $('Invoice Parser AI Agent').item.json.output.total_amount }}",
+            "Approval Notes": "={{ $json.data['Approval Notes'] }}",
+            "Invoice Number": "={{ $('Invoice Parser AI Agent').item.json.output.invoice_number }}"
+          },
+          "schema": [
+            {
+              "id": "Invoice Number",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "Invoice Number",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Invoice Date",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "Invoice Date",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Due Date",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "Due Date",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Vendor Name",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "Vendor Name",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Total Amount",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "Total Amount",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Currency",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "Currency",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Items",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "Items",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Tax",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "Tax",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Category",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "Category",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Approved",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "Approved",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Approval Notes",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "Approval Notes",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Reviewed By",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "Reviewed By",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            }
+          ],
+          "mappingMode": "defineBelow",
+          "matchingColumns": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {},
+        "operation": "append",
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gid=0",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1ueJfN5dFTXY3_AdvnYUL5_RjV9YwSFvbxwA_ivtqnJk/edit#gid=0",
+          "cachedResultName": "Invoices"
+        },
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "1ueJfN5dFTXY3_AdvnYUL5_RjV9YwSFvbxwA_ivtqnJk",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1ueJfN5dFTXY3_AdvnYUL5_RjV9YwSFvbxwA_ivtqnJk/edit?usp=drivesdk",
+          "cachedResultName": "Copy of PDF Invoice Parser - n8n template"
+        }
+      },
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ypmzFxQFfAacuVVC",
+          "name": "Google Sheets account"
+        }
+      },
+      "typeVersion": 4.5
+    },
+    {
+      "id": "41ae561e-89ca-46fb-937a-d1f914555f16",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "color": 4,
+        "width": 280,
+        "height": 600,
+        "content": "## SETUP REQUIRED\n**Author:** [Billy Christi](https://n8n.io/creators/billy/)\n\n**Copy the Google Sheet template here**:  \n👉 [PDF Invoice Parser with Approval Workflow – Google Sheet Template](https://docs.google.com/spreadsheets/d/1ueJfN5dFTXY3_AdvnYUL5_RjV9YwSFvbxwA_ivtqnJk/edit?gid=0#gid=0)\n\nGoogle Sheets Structure:\nSheet: \"Invoices\"\n• Column A: Invoice Number  \n• Column B: Invoice Date  \n• Column C: Due Date  \n• Column D: Vendor Name  \n• Column E: Total Amount  \n• Column F: Currency  \n• Column G: Items  \n• Column H: Tax  \n• Column I: Category  \n• Column J: Approved\n• Column K: Approval Notes\n• Column L: Reviewed By\n\nRequired Credentials:\n• Google Drive Credential  \n• Gmail Credential \n• Google Sheets Credential \n• OpenAI API Key (GPT-4)\n"
+      },
+      "typeVersion": 1
+    },
+    {
+      "id": "156efce3-866d-4350-bbd9-92127b19fb02",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        340,
+        640
+      ],
+      "parameters": {
+        "color": 5,
+        "width": 700,
+        "height": 560,
+        "content": "## 🧾 Automated PDF Invoice Processing & Approval Flow using OpenAI and Google Sheets\n\nWhat This Template Does:\n\n- Monitors **Google Drive**, **Gmail**, and a **web form** for incoming PDF invoices  \n- Automatically downloads and extracts raw text from PDF attachments  \n- Uses **GPT-4o-mini** to intelligently parse invoice data (invoice number, vendor, date, amount, tax, items, etc.)  \n- Categorizes invoices into types such as *Utilities, Travel, Office Supplies, Food & Beverage, Others*  \n- Sends a dynamic **approval request email** with an embedded decision form (Yes/No, reviewer name, notes)  \n- Stores both approved and rejected invoice data into **Google Sheets** for recordkeeping  \n- Sends rejection notifications to the finance team for follow-up  \n- Provides a complete, automated approval pipeline with human oversight  \n- Includes a structured JSON schema for consistent and error-free AI output  \n- Polls input sources every minute to ensure timely and responsive processing  \n- Ideal for businesses seeking to **automate their invoice approval and bookkeeping workflows** with AI\n\n"
+      },
+      "typeVersion": 1
+    },
+    {
+      "id": "fc894a1c-91a1-4199-87a6-535e1fd90b08",
+      "name": "Sticky Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1080,
+        640
+      ],
+      "parameters": {
+        "color": 5,
+        "width": 620,
+        "height": 620,
+        "content": "## 📋 WORKFLOW PROCESS OVERVIEW\n\n1. **Invoice Collection**  \nInvoices are captured through three triggers: new PDFs in a Google Drive folder, incoming Gmail messages with PDF attachments, or direct uploads via a web form.\n\n2. **File Handling**  \nIf uploaded via Drive, the PDF is downloaded using its file ID; if via Gmail or form, the PDF is already available as binary data.\n\n3. **Text Extraction**  \nThe system extracts raw text from the PDF using the appropriate method based on its source (Drive, Email, or Form).\n\n4. **AI Data Parsing**  \nGPT-4 processes the extracted text into structured JSON, identifying invoice details like vendor, date, amount, and categorizing the invoice.\n\n5. **Approval Request**  \nAn email is sent to the reviewer with an approval form asking for a Yes/No decision along with optional notes.\n\n6. **Decision Routing**  \nIf approved, the data moves forward for storage; if rejected, a notification is sent to the finance team.\n\n7. **Save Invoice Data**  \nAll extracted and reviewed invoice data is saved into a Google Sheet, maintaining a full record of each invoice and its status.\n"
+      },
+      "typeVersion": 1
+    },
+    {
+      "id": "f568905a-bb5a-45fd-9a74-33476910df0c",
+      "name": "Send Invoice for Approval",
+      "type": "n8n-nodes-base.gmail",
+      "position": [
+        1380,
+        220
+      ],
+      "webhookId": "a23938a4-fc6c-4445-8dee-17e501e92e06",
+      "parameters": {
+        "sendTo": "replace_with_approver_email@yopmail.com",
+        "message": "=A new invoice has been submitted and requires your review and approval:",
+        "options": {},
+        "subject": "=[Action Required] Invoice Approval Request – {{ $json.output.vendor_name }}",
+        "operation": "sendAndWait",
+        "formFields": {
+          "values": [
+            {
+              "fieldType": "dropdown",
+              "fieldLabel": "Approve Invoice?",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Yes"
+                  },
+                  {
+                    "option": "No"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Reviewed By",
+              "requiredField": true
+            },
+            {
+              "fieldType": "textarea",
+              "fieldLabel": "Approval Notes"
+            }
+          ]
+        },
+        "responseType": "customForm"
+      },
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "sWl7FFMkEUYBj0zM",
+          "name": "Gmail account"
+        }
+      },
+      "typeVersion": 2.1
+    },
+    {
+      "id": "2b312903-d446-48f3-aad9-856c5c3272ef",
+      "name": "Monitor Email Attachments",
+      "type": "n8n-nodes-base.gmailTrigger",
+      "position": [
+        560,
+        220
+      ],
+      "parameters": {
+        "simple": false,
+        "filters": {},
+        "options": {
+          "downloadAttachments": true,
+          "dataPropertyAttachmentsPrefixName": "attachment_"
+        },
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        }
+      },
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "sWl7FFMkEUYBj0zM",
+          "name": "Gmail account"
+        }
+      },
+      "typeVersion": 1.2
+    },
+    {
+      "id": "ceae44d4-f917-498e-8c34-238e362cc2c7",
+      "name": "Upload Invoice (PDF) Form",
+      "type": "n8n-nodes-base.formTrigger",
+      "position": [
+        560,
+        420
+      ],
+      "webhookId": "e033bea9-70e8-41e2-aea4-1b95714ea257",
+      "parameters": {
+        "options": {},
+        "formTitle": "Upload Invoice (PDF)",
+        "formFields": {
+          "values": [
+            {
+              "fieldType": "file",
+              "fieldLabel": "Upload",
+              "multipleFiles": false,
+              "requiredField": true,
+              "acceptFileTypes": ".pdf"
+            }
+          ]
+        },
+        "formDescription": "Upload your invoice PDF using this form."
+      },
+      "typeVersion": 2.2
+    },
+    {
+      "id": "f156468b-b7e6-4a80-88b2-b3472cc00753",
+      "name": "Extract Text from Drive PDF",
+      "type": "n8n-nodes-base.extractFromFile",
+      "position": [
+        760,
+        0
+      ],
+      "parameters": {
+        "options": {},
+        "operation": "pdf"
+      },
+      "typeVersion": 1
+    },
+    {
+      "id": "031914aa-0759-425d-a564-624ca56ce01b",
+      "name": "Extract Text from Email PDF",
+      "type": "n8n-nodes-base.extractFromFile",
+      "position": [
+        760,
+        220
+      ],
+      "parameters": {
+        "options": {},
+        "operation": "pdf",
+        "binaryPropertyName": "attachment_0"
+      },
+      "typeVersion": 1
+    },
+    {
+      "id": "1a3a1109-36c0-4bf2-a919-75d869196757",
+      "name": "Extract Text from Form PDF",
+      "type": "n8n-nodes-base.extractFromFile",
+      "position": [
+        760,
+        420
+      ],
+      "parameters": {
+        "options": {},
+        "operation": "pdf",
+        "binaryPropertyName": "Upload"
+      },
+      "typeVersion": 1
+    },
+    {
+      "id": "9211ef8b-cc47-4975-8dfd-0210b34360cb",
+      "name": "Check Approval Decision",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        1640,
+        220
+      ],
+      "parameters": {
+        "options": {},
+        "conditions": {
+          "options": {
+            "version": 2,
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "451bfdfc-f645-4e3c-91cc-895558f45b11",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              },
+              "leftValue": "={{ $json.data['Approve Invoice?'] }}",
+              "rightValue": "Yes"
+            }
+          ]
+        }
+      },
+      "typeVersion": 2.2
+    },
+    {
+      "id": "1c051311-19c3-4c46-b9cb-c60815432fd9",
+      "name": "Send Rejection Alert",
+      "type": "n8n-nodes-base.gmail",
+      "position": [
+        1780,
+        480
+      ],
+      "webhookId": "1c33c42a-0d8e-466f-a424-faba306c56af",
+      "parameters": {
+        "sendTo": "finance_team@yopmail.com",
+        "message": "=Hi Finance Team,\n\nAn invoice from {{ $('Invoice Parser AI Agent').item.json.output.vendor_name }} has been disapproved during the approval process.\n\nReviewed By: {{ $('Send Invoice for Approval').item.json.data['Reviewed By'] }}\nApproval Notes: {{ $('Send Invoice for Approval').item.json.data['Approval Notes'] }}\n\nPlease review and follow up as needed.\n\nThank you,\nAutomated Invoice System\n\n",
+        "options": {
+          "appendAttribution": false
+        },
+        "subject": "=[Alert] Invoice Disapproved – {{ $('Invoice Parser AI Agent').item.json.output.vendor_name }}",
+        "emailType": "text"
+      },
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "sWl7FFMkEUYBj0zM",
+          "name": "Gmail account"
+        }
+      },
+      "typeVersion": 2.1
+    }
+  ],
+  "pinData": {
+    "Invoice Parser AI Agent": [
+      {
+        "output": {
+          "tax": "8.50",
+          "items": [
+            {
+              "amount": "85.00",
+              "description": "Web Design - This is a sample description..."
+            }
+          ],
+          "category": "Others",
+          "currency": "USD",
+          "due_date": "January 31, 2016",
+          "vendor_name": "DEMO - Sliced Invoices",
+          "invoice_date": "January 25, 2016",
+          "total_amount": "93.50",
+          "invoice_number": "INV-3337"
+        }
+      }
+    ],
+    "Send Invoice for Approval": [
+      {
+        "data": {
+          "Reviewed By": "jack",
+          "Approval Notes": "notes approval",
+          "Approve Invoice?": "Yes"
+        }
+      }
+    ]
+  },
+  "connections": {
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Invoice Parser AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Invoice PDF": {
+      "main": [
+        [
+          {
+            "node": "Extract Text from Drive PDF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Rejection Alert": {
+      "main": [
+        [
+          {
+            "node": "Insert Invoice Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Invoice Folder Monitor": {
+      "main": [
+        [
+          {
+            "node": "Download Invoice PDF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Approval Decision": {
+      "main": [
+        [
+          {
+            "node": "Insert Invoice Data",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Rejection Alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Invoice Parser AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Send Invoice for Approval",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Invoice Parser AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Monitor Email Attachments": {
+      "main": [
+        [
+          {
+            "node": "Extract Text from Email PDF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Invoice for Approval": {
+      "main": [
+        [
+          {
+            "node": "Check Approval Decision",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload Invoice (PDF) Form": {
+      "main": [
+        [
+          {
+            "node": "Extract Text from Form PDF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Text from Form PDF": {
+      "main": [
+        [
+          {
+            "node": "Invoice Parser AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Text from Drive PDF": {
+      "main": [
+        [
+          {
+            "node": "Invoice Parser AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Text from Email PDF": {
+      "main": [
+        [
+          {
+            "node": "Invoice Parser AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}
