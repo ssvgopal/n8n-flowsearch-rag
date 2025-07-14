@@ -64,8 +64,8 @@ We welcome all types of contributions:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/n8n-rag-workflows.git
-   cd n8n-rag-workflows
+   git clone https://github.com/ssvgopal/n8n-flowsearch-rag.git
+   cd n8n-flowsearch-rag
    ```
 
 2. Set up your environment variables:
