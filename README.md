@@ -52,7 +52,7 @@ We welcome all types of contributions:
 1. **Fork** this repository to your GitHub account
 2. **Clone** your forked repository:
    ```bash
-   git clone https://github.com/your-username/n8n-rag-workflows.git
+   git clone https://github.com/ssvgopal/n8n-flowsearch-rag.git
    cd n8n-rag-workflows
    ```
 3. **Explore** the workflows in the `workflows/` directory
@@ -121,7 +121,7 @@ OPENAI_API_KEY=your_openai_api_key
 We're building this together! Here's how you can get involved:
 
 1. **Start with Good First Issues**: Look for issues labeled `good first issue`
-2. **Join the Discussion**: Share your ideas and questions in our [Discussions](https://github.com/your-username/n8n-rag-workflows/discussions)
+2. **Join the Discussion**: Share your ideas and questions in our [Discussions](https://github.com/ssvgopal/n8n-flowsearch-rag/discussions)
 3. **Submit a PR**: Follow our [Contributing Guidelines](CONTRIBUTING.md)
 4. **Spread the Word**: Star the repo and share with your network
 
@@ -161,5 +161,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Have questions or ideas? Join our community discussion or open an issue! Together, we can build something amazing.
 
-[![Star on GitHub](https://img.shields.io/github/stars/your-username/n8n-rag-workflows?style=social)](https://github.com/your-username/n8n-rag-workflows/stargazers)
-[![Fork on GitHub](https://img.shields.io/github/forks/your-username/n8n-rag-workflows?style=social)](https://github.com/your-username/n8n-rag-workflows/forks)
+[![Star on GitHub](https://img.shields.io/github/stars/ssvgopal/n8n-flowsearch-rag?style=social)](https://github.com/ssvgopal/n8n-flowsearch-rag/stargazers)
+[![Fork on GitHub](https://img.shields.io/github/forks/ssvgopal/n8n-flowsearch-rag?style=social)](https://github.com/ssvgopal/n8n-flowsearch-rag/forks)

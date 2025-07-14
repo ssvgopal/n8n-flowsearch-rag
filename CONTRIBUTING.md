@@ -26,8 +26,8 @@ There are many ways to contribute, and not all of them involve writing code:
 
 3. **Clone your fork** locally:
    ```bash
-   git clone https://github.com/your-username/n8n-rag-workflows.git
-   cd n8n-rag-workflows
+   git clone https://github.com/ssvgopal/n8n-flowsearch-rag.git
+   cd n8n-flowsearch-rag
    ```
 
 4. **Create a new branch** for your changes:
@@ -152,4 +152,4 @@ Your contributions help make n8n RAG Workflows better for everyone. We appreciat
 
 ---
 
-💡 Need help getting started? Join our [community discussions](https://github.com/your-username/n8n-rag-workflows/discussions) or open an issue!
+💡 Need help getting started? Join our [community discussions](https://github.com/ssvgopal/n8n-flowsearch-rag/discussions) or open an issue!
