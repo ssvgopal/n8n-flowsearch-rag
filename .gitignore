@@ -1,5 +1,23 @@
 # Environment variables
 .env
+.env.*
+!.env.example
+secrets.*
+config/secrets.*
+
+# Credentials
+*credentials*.json
+*service-account*.json
+*.pem
+*.key
+*.p12
+*.pfx
+*.cer
+*.crt
+*.csr
+*.pub
+*.gpg
+*.asc
 
 # Python
 __pycache__/
@@ -34,6 +52,11 @@ ENV/
 *.swp
 *.swo
 *~
+.project
+.settings/
+*.sublime-*
+*.sublime-workspace
+*.sublime-project
 
 # Node
 node_modules/
@@ -48,4 +71,6 @@ yarn-error.log*
 .Spotlight-V100
 .Trashes
 ehthumbs.db
+Thumbs.db
+
 Thumbs.db
