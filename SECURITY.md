@@ -10,7 +10,7 @@ We take security seriously and appreciate your help in keeping our project and u
 
 ### How to Report a Security Issue
 
-If you discover a security vulnerability, please report it through our security advisory service at [GitHub Security Advisories](https://github.com/yourusername/n8n-rag-workflows/security/advisories).
+If you discover a security vulnerability, please report it through our security advisory service at [GitHub Security Advisories](https://github.com/ssvgopal/n8n-flowsearch-rag/security/advisories).
 
 **Please do not report security vulnerabilities through public GitHub issues, discussions, or pull requests.**
 
